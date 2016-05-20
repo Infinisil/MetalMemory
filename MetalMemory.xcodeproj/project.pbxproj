@@ -7,19 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B29EFB21CEF215F006DD052 /* Uniform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B29EFB01CEF215F006DD052 /* Uniform.swift */; };
+		0B29EFB31CEF215F006DD052 /* Uniform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B29EFB01CEF215F006DD052 /* Uniform.swift */; };
+		0B29EFB41CEF215F006DD052 /* Uniform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B29EFB01CEF215F006DD052 /* Uniform.swift */; };
+		0B29EFB51CEF215F006DD052 /* UniformArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B29EFB11CEF215F006DD052 /* UniformArray.swift */; };
+		0B29EFB61CEF215F006DD052 /* UniformArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B29EFB11CEF215F006DD052 /* UniformArray.swift */; };
+		0B29EFB71CEF215F006DD052 /* UniformArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B29EFB11CEF215F006DD052 /* UniformArray.swift */; };
+		0B29EFB91CEF21AC006DD052 /* PageMemory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B29EFB81CEF21AC006DD052 /* PageMemory.swift */; };
+		0B29EFBA1CEF21AC006DD052 /* PageMemory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B29EFB81CEF21AC006DD052 /* PageMemory.swift */; };
+		0B29EFBB1CEF21AC006DD052 /* PageMemory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B29EFB81CEF21AC006DD052 /* PageMemory.swift */; };
+		0B29EFBD1CEF2361006DD052 /* UniformTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B29EFBC1CEF2361006DD052 /* UniformTests.swift */; };
+		0B29EFBE1CEF2361006DD052 /* UniformTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B29EFBC1CEF2361006DD052 /* UniformTests.swift */; };
+		0B29EFBF1CEF2361006DD052 /* UniformTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B29EFBC1CEF2361006DD052 /* UniformTests.swift */; };
 		0B4307CB1CEF0A2E00A11DA4 /* MetalMemory.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B4307CA1CEF0A2E00A11DA4 /* MetalMemory.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0B4307D21CEF0B1700A11DA4 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4307D11CEF0B1700A11DA4 /* Test.swift */; };
-		0B4307D31CEF0B1700A11DA4 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4307D11CEF0B1700A11DA4 /* Test.swift */; };
 		0B4307D51CEF0E9400A11DA4 /* MetalMemory.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B4307CA1CEF0A2E00A11DA4 /* MetalMemory.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0B4307E41CEF0F9A00A11DA4 /* MetalMemory.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B4307CA1CEF0A2E00A11DA4 /* MetalMemory.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0B4307F71CEF109B00A11DA4 /* MetalMemoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4307F61CEF109B00A11DA4 /* MetalMemoryTests.swift */; };
 		0B4307F91CEF109B00A11DA4 /* MetalMemory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B4307C81CEF0A2E00A11DA4 /* MetalMemory.framework */; };
 		0B4308081CEF11D900A11DA4 /* MetalMemory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B4307BA1CEF0A2200A11DA4 /* MetalMemory.framework */; };
-		0B43080E1CEF125200A11DA4 /* MetalMemoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4307F61CEF109B00A11DA4 /* MetalMemoryTests.swift */; };
 		0B4308181CEF128B00A11DA4 /* MetalMemory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B4307DC1CEF0F1900A11DA4 /* MetalMemory.framework */; };
 		0BB6162C1CEF12DE00D4678E /* Info-tvOS.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0BB6162B1CEF12DE00D4678E /* Info-tvOS.plist */; };
-		0BB6162D1CEF12E300D4678E /* MetalMemoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4307F61CEF109B00A11DA4 /* MetalMemoryTests.swift */; };
-		0BB616401CEF19E900D4678E /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4307D11CEF0B1700A11DA4 /* Test.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,16 +53,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B29EFB01CEF215F006DD052 /* Uniform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Uniform.swift; sourceTree = "<group>"; };
+		0B29EFB11CEF215F006DD052 /* UniformArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniformArray.swift; sourceTree = "<group>"; };
+		0B29EFB81CEF21AC006DD052 /* PageMemory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageMemory.swift; sourceTree = "<group>"; };
+		0B29EFBC1CEF2361006DD052 /* UniformTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniformTests.swift; sourceTree = "<group>"; };
 		0B4307BA1CEF0A2200A11DA4 /* MetalMemory.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MetalMemory.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B4307BF1CEF0A2200A11DA4 /* Info-iOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info-iOS.plist"; path = "MetalMemory/Info-iOS.plist"; sourceTree = SOURCE_ROOT; };
 		0B4307C81CEF0A2E00A11DA4 /* MetalMemory.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MetalMemory.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B4307CA1CEF0A2E00A11DA4 /* MetalMemory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MetalMemory.h; path = MetalMemory/MetalMemory.h; sourceTree = SOURCE_ROOT; };
 		0B4307CC1CEF0A2E00A11DA4 /* Info-OSX.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info-OSX.plist"; path = "MetalMemory/Info-OSX.plist"; sourceTree = SOURCE_ROOT; };
-		0B4307D11CEF0B1700A11DA4 /* Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		0B4307DC1CEF0F1900A11DA4 /* MetalMemory.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MetalMemory.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B4307E01CEF0F1900A11DA4 /* Info-tvOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info-tvOS.plist"; path = "MetalMemory/Info-tvOS.plist"; sourceTree = SOURCE_ROOT; };
 		0B4307F41CEF109B00A11DA4 /* MetalMemoryTests OSX.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MetalMemoryTests OSX.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0B4307F61CEF109B00A11DA4 /* MetalMemoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MetalMemoryTests.swift; path = MetalMemoryTests/MetalMemoryTests.swift; sourceTree = SOURCE_ROOT; };
 		0B4307F81CEF109B00A11DA4 /* Info-OSX.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = "Info-OSX.plist"; path = "MetalMemoryTests/Info-OSX.plist"; sourceTree = "<group>"; };
 		0B4308031CEF11D900A11DA4 /* MetalMemoryTests iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MetalMemoryTests iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B4308071CEF11D900A11DA4 /* Info-iOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info-iOS.plist"; path = "MetalMemoryTests/Info-iOS.plist"; sourceTree = SOURCE_ROOT; };
@@ -139,7 +147,9 @@
 		0B4307D01CEF0A5200A11DA4 /* MetalMemory */ = {
 			isa = PBXGroup;
 			children = (
-				0B4307D11CEF0B1700A11DA4 /* Test.swift */,
+				0B29EFB81CEF21AC006DD052 /* PageMemory.swift */,
+				0B29EFB01CEF215F006DD052 /* Uniform.swift */,
+				0B29EFB11CEF215F006DD052 /* UniformArray.swift */,
 			);
 			path = MetalMemory;
 			sourceTree = "<group>";
@@ -160,7 +170,7 @@
 		0B4307EF1CEF106300A11DA4 /* MetalMemoryTests */ = {
 			isa = PBXGroup;
 			children = (
-				0B4307F61CEF109B00A11DA4 /* MetalMemoryTests.swift */,
+				0B29EFBC1CEF2361006DD052 /* UniformTests.swift */,
 			);
 			path = MetalMemoryTests;
 			sourceTree = "<group>";
@@ -416,7 +426,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B4307D21CEF0B1700A11DA4 /* Test.swift in Sources */,
+				0B29EFB31CEF215F006DD052 /* Uniform.swift in Sources */,
+				0B29EFB61CEF215F006DD052 /* UniformArray.swift in Sources */,
+				0B29EFBA1CEF21AC006DD052 /* PageMemory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,7 +436,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B4307D31CEF0B1700A11DA4 /* Test.swift in Sources */,
+				0B29EFB21CEF215F006DD052 /* Uniform.swift in Sources */,
+				0B29EFB51CEF215F006DD052 /* UniformArray.swift in Sources */,
+				0B29EFB91CEF21AC006DD052 /* PageMemory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,7 +446,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0BB616401CEF19E900D4678E /* Test.swift in Sources */,
+				0B29EFB41CEF215F006DD052 /* Uniform.swift in Sources */,
+				0B29EFB71CEF215F006DD052 /* UniformArray.swift in Sources */,
+				0B29EFBB1CEF21AC006DD052 /* PageMemory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,7 +456,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B4307F71CEF109B00A11DA4 /* MetalMemoryTests.swift in Sources */,
+				0B29EFBD1CEF2361006DD052 /* UniformTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,7 +464,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B43080E1CEF125200A11DA4 /* MetalMemoryTests.swift in Sources */,
+				0B29EFBE1CEF2361006DD052 /* UniformTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,7 +472,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0BB6162D1CEF12E300D4678E /* MetalMemoryTests.swift in Sources */,
+				0B29EFBF1CEF2361006DD052 /* UniformTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
