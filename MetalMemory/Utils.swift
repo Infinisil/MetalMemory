@@ -20,6 +20,16 @@ func flp2(n: UInt) -> UInt {
 	return n - (n >> 1)
 }
 
+func roundUpToPowerOf2(n: Int) -> Int {
+	var n = n - 1
+	var shift = 1
+	while (n+1) & n != 0 {
+		n |= n >> shift
+		shift <<= 1
+	}
+	return n + 1
+}
+
 
 
 
@@ -27,8 +37,6 @@ func flp2(n: UInt) -> UInt {
 
 var expectedFatal = false
 @noreturn func fatalError(@autoclosure message: () -> String = "", file: StaticString = #file, line: UInt = #line) {
-	if expectedFatal {
-		NSThread.exit()
-	}
+	if expectedFatal { NSThread.exit() }
 	Swift.fatalError(message, file: file, line: line)
 }

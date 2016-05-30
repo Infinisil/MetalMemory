@@ -21,6 +21,7 @@ struct S4 {
 	let v : (S3, S3, S3, S3, S3, S3, S3, S3, S3, S3, S3, S3, S3, S3, S3, S3)
 }
 
+// Biggest struct possible, 65535 bytes
 struct S5 {
 	let v1 : (S4, S4, S4, S4, S4, S4, S4, S4, S4, S4, S4, S4, S4, S4, S4)
 	let v2 : (S3, S3, S3, S3, S3, S3, S3, S3, S3, S3, S3, S3, S3, S3, S3)

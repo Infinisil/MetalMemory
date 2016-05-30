@@ -9,7 +9,7 @@
 import XCTest
 @testable import MetalMemory
 
-class FatalTests: XCTestCase {
+class UniformTests: XCTestCase {
 	let value = 1
 	
 	var valueLess : Uniform<Int>!
@@ -29,22 +29,22 @@ class FatalTests: XCTestCase {
 	}
 	
 	func testInit() {
-		XCTAssertEqual(valueLess.memory, 0)
-		XCTAssertEqual(uniform.memory, value)
+		XCTAssertEqual(valueLess.value, 0)
+		XCTAssertEqual(uniform.value, value)
 		
-		assertFatal { self.valueLess.metalBuffer }
-		assertFatal { self.uniform.metalBuffer }
+		assertFatal { self.valueLess.buffer }
+		assertFatal { self.uniform.buffer }
 	}
 	
 	func testZeroSize() {
-		assertFatal { Uniform<()>() }
+		_ = Uniform<()>()
 	}
 
 	func testMemory() {
 		let value = 10
 		
-		uniform.memory = value
-		XCTAssertEqual(uniform.memory, value)
+		uniform.value = value
+		XCTAssertEqual(uniform.value, value)
 	}
 	
 	func assignDevice() {
@@ -61,19 +61,19 @@ class FatalTests: XCTestCase {
 		
 		uniform.device = device
 		
-		XCTAssertEqual(uniform.metalBuffer.label, string)
+		XCTAssertEqual(uniform.buffer.label, string)
 		
 		uniform.device = nil
 		uniform.device = device
 		
-		XCTAssertEqual(uniform.metalBuffer.label, string)
+		XCTAssertEqual(uniform.buffer.label, string)
 	}
 
 	func testBuffer() {
 		uniform.device = device
 		XCTAssert(uniform.device === device)
 		
-		let buffer = uniform.metalBuffer
+		let buffer = uniform.buffer
 		XCTAssert(buffer.device === device)
 		
 		let pointer = UnsafeMutablePointer<Int>(buffer.contents())
@@ -90,7 +90,7 @@ class FatalTests: XCTestCase {
 		func test<T>(t: T.Type) {
 			var u : Uniform<T>? = Uniform()
 			u?.device = device
-			XCTAssert(u?.metalBuffer.length >= sizeof(T))
+			XCTAssert(u?.buffer.length >= sizeof(T))
 			u = nil
 		}
 		
@@ -103,7 +103,7 @@ class FatalTests: XCTestCase {
 }
 
 extension XCTestCase {
-	class FatalThread : NSThread {
+	final class FatalThread : NSThread {
 		let c : () -> ()
 		let message : String
 		

@@ -1,154 +1,131 @@
 //
-//  UniformArray.swift
-//  MetalExperiments
+//  PageMemory.swift
+//  MetalMemory
 //
-//  Created by Silvan Mosberger on 08/04/16.
-//  Copyright © 2016 Silvan Mosberger. All rights reserved.
+//  Created by Silvan Mosberger on 20/05/16.
+//
 //
 
 import Foundation
 import Metal
 
-private let pagesize = NSPageSize()
 
-final class UniformArray<T> : CollectionType, CustomStringConvertible {
-	private let device : MTLDevice
-	private(set) var metalBuffer : MTLBuffer {
-		didSet {
-			metalBuffer.label = label
-		}
-	}
-	private(set) var memory : PageMemory<T>
+private let resourceOptions : MTLResourceOptions = [.StorageModeShared, .CPUCacheModeDefaultCache]
+
+
+final public class UniformArray<T> : MetalMemory {
+	private var memory : PageMemory
 	
-	var label : String? {
-		didSet {
-			metalBuffer.label = label
-		}
-	}
+	private let policy : Policy
 	
-	var description: String {
-		return "[\(map{"\($0)"}.joinWithSeparator(", "))]"
-	}
-	
-	var allocatedPages = 1 {
-		didSet {
-			guard oldValue < allocatedPages else { return }
-			
-			let oldMemory = memory
-			memory = PageMemory(pages: allocatedPages)
-			NSCopyMemoryPages(oldMemory.pointer, memory.pointer, endIndex * strideof(T))
-			
-			free += (allocatedPages - oldValue) * pagesize
-			
-			metalBuffer = device.newBufferWithBytesNoCopy(memory.pointer, length: memory.bytes, options: .CPUCacheModeDefaultCache, deallocator: nil)
-		}
-	}
-	
-	var free = pagesize
-	
-	var startIndex = 0
-	var endIndex = 0
-	
-	init(device: MTLDevice, label: String?) {
-		self.device = device
-		self.label = label
-		memory = PageMemory(pages: allocatedPages)
-		metalBuffer = device.newBufferWithBytesNoCopy(memory.pointer, length: memory.bytes, options: .CPUCacheModeDefaultCache, deallocator: nil)
-		metalBuffer.label = label
-	}
-	
-	convenience init() {
-		self.init(device: MTLCreateSystemDefaultDevice()!)
-	}
-	
-	convenience init(device: MTLDevice) {
-		self.init(device: device, label: nil)
-	}
-	
-	func generate() -> UnsafeBufferPointerGenerator<T> {
-		return memory.bufferPointer.generate()
-	}
-	
-	subscript (position : Int) -> T {
+	public var device : MTLDevice? {
 		get {
-			return memory.pointer[position]
+			return _metalBuffer?.device
 		}
 		set {
-			memory.pointer[position] = newValue
+			update(memory.mem.pointer, bytes: memory.mem.bytes)
 		}
 	}
 	
-	func replace<C : CollectionType where C.Generator.Element == T>(with c: C) {
-		replaceRange(indices, with: c)
+	func update(pointer: UnsafeMutablePointer<Void>, bytes: Int) {
+		_metalBuffer = device?.newBufferWithBytesNoCopy(pointer, length: bytes, options: resourceOptions, deallocator: nil)
+		_metalBuffer?.label = label
 	}
 	
-	func replaceWithData(data: NSData) {
-		let newCount = data.length / strideof(T)
-		reserveCapacity(newCount)
-		memcpy(memory.pointer, data.bytes, data.length)
-		endIndex = newCount
-		free = memory.bytes - data.length
+	public var buffer : MTLBuffer {
+		if let buffer = _metalBuffer {
+			return buffer
+		} else {
+			fatalError("MTLDevice not provided and therefore no MTLBuffer available. Set the `device` property to prevent this.")
+		}
 	}
 	
-	func extendTo(n: Int) {
-		reserveCapacity(n)
-		endIndex = n
-		free = memory.bytes - strideof(T) * n
+	public var label : String? {
+		didSet {
+			_metalBuffer?.label = label
+		}
+	}
+	
+	public var offset : Int { return 0 }
+	
+	private var _metalBuffer : MTLBuffer?
+	
+	var pointer : UnsafeMutablePointer<T> {
+		return UnsafeMutablePointer(memory.mem.pointer)
+	}
+	
+	var bufferPointer : UnsafeMutableBufferPointer<T> {
+		return UnsafeMutableBufferPointer(start: pointer, count: count)
+	}
+	
+	public var count : Int {
+		didSet {
+			memory.bytes = count * strideof(T)
+		}
+	}
+	
+	public init(count: Int, policy: Policy = Policy()) {
+		self.policy = policy
+		self.count = count
+		memory = PageMemory(bytes: count * strideof(T), policy: Policy())
+		memory.movedCallbacks.append(update)
 	}
 }
 
+extension UniformArray : CollectionType {
+	public var startIndex : Int { return 0 }
+	public var endIndex : Int { return count }
+	
+	public func generate() -> UnsafeBufferPointerGenerator<T> {
+		return bufferPointer.generate()
+	}
+	
+	public subscript (position : Int) -> T {
+		get {
+			return pointer[position]
+		}
+		set {
+			pointer[position] = newValue
+		}
+	}
+}
 
 extension UniformArray : RangeReplaceableCollectionType {
-	func reserveCapacity(n: Int) {
-		allocatedPages = NSRoundUpToMultipleOfPageSize(n * strideof(T)) / pagesize
+	
+	convenience public init() {
+		self.init(count: 1)
 	}
 	
-	func append(newElement: T) {
-		if free < strideof(T) {
-			allocatedPages += 1
-		}
-		
-		memory.pointer[endIndex] = newElement
-		endIndex += 1
-		free -= strideof(T)
+	public func reserveCapacity(n: Int) {
+		count = max(count, n)
 	}
 	
-	func replaceRange<C : CollectionType where C.Generator.Element == T>(subRange: Range<Int>, with newElements: C) {
+	private var free : Int {
+		return (memory.bytes - count * strideof(T)) / strideof(T)
+	}
+	
+	public func replaceRange<C : CollectionType where C.Generator.Element == T>(subRange: Range<Int>, with newElements: C) {
 		let ccount = Int(newElements.count.toIntMax())
 		let dif = ccount - subRange.count
 		
-		if free < dif * strideof(T) {
-			reserveCapacity(count - subRange.count + ccount)
+		if free < dif {
+			reserveCapacity(count + dif)
 		}
 		
-		if subRange.endIndex != endIndex {
-			let dest = memory.pointer.advancedBy(subRange.startIndex).advancedBy(ccount)
-			let orig = memory.pointer.advancedBy(subRange.endIndex)
-			let n = dest.distanceTo(memory.pointer.advancedBy(endIndex)) * strideof(T)
+		if subRange.endIndex != count {
+			let dest = pointer.advancedBy(subRange.startIndex).advancedBy(ccount)
+			let orig = pointer.advancedBy(subRange.endIndex)
+			let n = dest.distanceTo(pointer.advancedBy(count)) * strideof(T)
 			
 			memmove(dest, orig, n)
 		}
 		
 		var index = subRange.startIndex
 		for elem in newElements {
-			memory.pointer[index] = elem
+			pointer[index] = elem
 			index += 1
 		}
 		
-		endIndex += dif
-		free -= dif * strideof(T)
-	}
-	
-	func appendContentsOf<S : CollectionType where S.Generator.Element == T>(newElements: S) {
-		replaceRange(endIndex..<endIndex, with: newElements)
+		count += dif
 	}
 }
-
-extension UniformArray {
-	convenience init(count: Int, repeatedValue: T) {
-		self.init()
-		let vals = [T](count: count, repeatedValue: repeatedValue)
-		appendContentsOf(vals)
-	}
-}
-
