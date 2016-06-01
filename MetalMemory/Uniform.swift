@@ -24,7 +24,7 @@ Example usage:
 let int = Uniform(value: 10)
 int.device = metalDevice
 int.value += 1
-commandEncoder.setBuffer(int.buffer, offset: int.offset, atIndex: 0)
+commandEncoder.setMemory(int, atIndex: 0)
 ```
 */
 public final class Uniform<T> : MetalMemory {

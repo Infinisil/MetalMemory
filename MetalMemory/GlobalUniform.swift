@@ -39,7 +39,7 @@ Example usage:
 let int = GlobalUniform(value: 10)
 globalUniformDevice = metalDevice
 int.value += 1
-commandEncoder.setBuffer(int.buffer, offset: int.offset, atIndex: 0)
+commandEncoder.setMemory(int, atIndex: 0)
 ```
 */
 public final class GlobalUniform<T> : MetalMemory, CustomStringConvertible {
