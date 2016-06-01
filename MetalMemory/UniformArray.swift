@@ -18,10 +18,7 @@ final public class UniformArray<T> : MetalMemory {
 	private let policy : Policy
 	
 	public var device : MTLDevice? {
-		get {
-			return _metalBuffer?.device
-		}
-		set {
+		didSet {
 			update(memory.mem.pointer, bytes: memory.mem.bytes)
 		}
 	}
