@@ -1,7 +1,4 @@
-//: Playground - noun: a place where people can play
-
 @testable import MetalMemory
-
 
 var a = GlobalUniform<Int>()
 
@@ -16,3 +13,5 @@ var b = GlobalUniform<Bool>()
 b.value
 b.value = true
 b.value
+
+

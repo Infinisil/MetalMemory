@@ -32,11 +32,9 @@ class GlobalUniformTests : XCTestCase {
 	func testBig() {
 		
 		let a = GlobalUniform<S5>()
-		print(a.offset)
 		
 		globalUniformDevice = device
 		XCTAssert(a.buffer.length > sizeof(S5) + 1)
-		print(a.buffer.length)
 	}
 	
 	func testA() {

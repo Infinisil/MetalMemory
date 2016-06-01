@@ -19,9 +19,6 @@
 		0B2E982D1CFD84FB00A633A0 /* UniformArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2E982C1CFD84FB00A633A0 /* UniformArrayTests.swift */; };
 		0B2E982E1CFD84FB00A633A0 /* UniformArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2E982C1CFD84FB00A633A0 /* UniformArrayTests.swift */; };
 		0B2E982F1CFD84FB00A633A0 /* UniformArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2E982C1CFD84FB00A633A0 /* UniformArrayTests.swift */; };
-		0B2E98311CFDA41C00A633A0 /* PolicyTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2E98301CFDA41C00A633A0 /* PolicyTest.swift */; };
-		0B2E98321CFDA41C00A633A0 /* PolicyTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2E98301CFDA41C00A633A0 /* PolicyTest.swift */; };
-		0B2E98331CFDA41C00A633A0 /* PolicyTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2E98301CFDA41C00A633A0 /* PolicyTest.swift */; };
 		0B4307CB1CEF0A2E00A11DA4 /* MetalMemory.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B4307CA1CEF0A2E00A11DA4 /* MetalMemory.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0B4307D51CEF0E9400A11DA4 /* MetalMemory.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B4307CA1CEF0A2E00A11DA4 /* MetalMemory.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0B4307E41CEF0F9A00A11DA4 /* MetalMemory.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B4307CA1CEF0A2E00A11DA4 /* MetalMemory.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -84,7 +81,6 @@
 		0B29EFB81CEF21AC006DD052 /* UniformArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniformArray.swift; sourceTree = "<group>"; };
 		0B29EFBC1CEF2361006DD052 /* UniformTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniformTests.swift; sourceTree = "<group>"; };
 		0B2E982C1CFD84FB00A633A0 /* UniformArrayTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniformArrayTests.swift; sourceTree = "<group>"; };
-		0B2E98301CFDA41C00A633A0 /* PolicyTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PolicyTest.swift; sourceTree = "<group>"; };
 		0B4307BA1CEF0A2200A11DA4 /* MetalMemory.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MetalMemory.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B4307BF1CEF0A2200A11DA4 /* Info-iOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info-iOS.plist"; path = "MetalMemory/Info-iOS.plist"; sourceTree = SOURCE_ROOT; };
 		0B4307C81CEF0A2E00A11DA4 /* MetalMemory.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MetalMemory.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -161,7 +157,6 @@
 		0B2E98341CFDB9BE00A633A0 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				0BB204CB1CF303E9001909AA /* AllocationPolicy.swift */,
 				0B6D3A091CEF925100C719CB /* Utils.swift */,
 			);
 			name = Utils;
@@ -195,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				0BB204D01CF31C23001909AA /* Interface.swift */,
+				0BB204CB1CF303E9001909AA /* AllocationPolicy.swift */,
 				0BB204C31CF2FF65001909AA /* MetalMemory.swift */,
 				0BB204CF1CF3186B001909AA /* Data structures */,
 				0B2E98341CFDB9BE00A633A0 /* Utils */,
@@ -219,7 +215,6 @@
 			isa = PBXGroup;
 			children = (
 				0B29EFBC1CEF2361006DD052 /* UniformTests.swift */,
-				0B2E98301CFDA41C00A633A0 /* PolicyTest.swift */,
 				0BB204D41CF31D77001909AA /* GlobalUniformTests.swift */,
 				0B2E982C1CFD84FB00A633A0 /* UniformArrayTests.swift */,
 				0BCA229B1CF10B290002637A /* BigStruct.swift */,
@@ -537,7 +532,6 @@
 				0B2E982D1CFD84FB00A633A0 /* UniformArrayTests.swift in Sources */,
 				0B29EFBD1CEF2361006DD052 /* UniformTests.swift in Sources */,
 				0BB204D51CF31D77001909AA /* GlobalUniformTests.swift in Sources */,
-				0B2E98311CFDA41C00A633A0 /* PolicyTest.swift in Sources */,
 				0BCA229C1CF10B290002637A /* BigStruct.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -549,7 +543,6 @@
 				0B2E982E1CFD84FB00A633A0 /* UniformArrayTests.swift in Sources */,
 				0B29EFBE1CEF2361006DD052 /* UniformTests.swift in Sources */,
 				0BB204D61CF31D77001909AA /* GlobalUniformTests.swift in Sources */,
-				0B2E98321CFDA41C00A633A0 /* PolicyTest.swift in Sources */,
 				0BCA229D1CF10B290002637A /* BigStruct.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -561,7 +554,6 @@
 				0B2E982F1CFD84FB00A633A0 /* UniformArrayTests.swift in Sources */,
 				0B29EFBF1CEF2361006DD052 /* UniformTests.swift in Sources */,
 				0BB204D71CF31D77001909AA /* GlobalUniformTests.swift in Sources */,
-				0B2E98331CFDA41C00A633A0 /* PolicyTest.swift in Sources */,
 				0BCA229E1CF10B290002637A /* BigStruct.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

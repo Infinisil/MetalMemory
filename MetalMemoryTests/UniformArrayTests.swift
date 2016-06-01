@@ -42,11 +42,9 @@ class UniformArrayTests: XCTestCase {
 		for i in array.indices {
 			XCTAssertEqual(array[i], i)
 		}
-		print(array.memory.mem.bytes)
 		
 		array.replaceRange(5000..<10000, with: [Int](count: 100, repeatedValue: 2000))
 		
-		print(array.memory.mem.bytes)
 		for i in array.indices {
 			if i < 5000 {
 				XCTAssertEqual(array[i], i)
@@ -85,9 +83,7 @@ class UniformArrayTests: XCTestCase {
 		array.append(1000)
 		
 		XCTAssertEqual(array.count, 1001)
-		
-		print(Array(array))
-		
+				
 		for i in array.indices {
 			XCTAssertEqual(array[i], i)
 		}
