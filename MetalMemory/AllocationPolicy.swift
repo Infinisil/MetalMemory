@@ -24,7 +24,7 @@ public struct Policy {
 			let pageBytes = NSRoundUpToMultipleOfPageSize(minBytes)
 			switch self {
 			case .PageMultiple: return pageBytes
-			case .PowerOfTwo: return Int(flp2(UInt(pageBytes)))
+			case .PowerOfTwo: return roundUpToPowerOf2(pageBytes)
 			}
 		}
 	}
@@ -35,7 +35,7 @@ public struct Policy {
 	/// A policy for deallocating
 	let decrease : Bool
 	
-	init(size: Rounding = .PageMultiple, decrease: Bool = true) {
+	init(size: Rounding, decrease: Bool) {
 		self.rounding = size
 		self.decrease = decrease
 	}

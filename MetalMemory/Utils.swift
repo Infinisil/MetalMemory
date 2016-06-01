@@ -8,18 +8,6 @@
 
 import Foundation
 
-
-func flp2(n: UInt) -> UInt {
-	var n = n
-	n = n | (n >> 1)
-	n = n | (n >> 2)
-	n = n | (n >> 4)
-	n = n | (n >> 8)
-	n = n | (n >> 16)
-	n = n | (n >> 32)
-	return n - (n >> 1)
-}
-
 func roundUpToPowerOf2(n: Int) -> Int {
 	var n = n - 1
 	var shift = 1
@@ -29,9 +17,6 @@ func roundUpToPowerOf2(n: Int) -> Int {
 	}
 	return n + 1
 }
-
-
-
 
 // Fatal error mocking, to be able to test an expected fatal
 

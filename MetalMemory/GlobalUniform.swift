@@ -47,14 +47,14 @@ public final class GlobalUniform<T> : MetalMemory, CustomStringConvertible {
 		if let buffer = globalBuffer {
 			return buffer
 		} else {
-			fatalError("Device not set")
+			fatalError("MTLDevice not provided and therefore no MTLBuffer available. Set the `globalUniformDevice` variable to prevent this.")
 		}
 	}
 	
 	public let offset : Int
 	
 	public var description : String {
-		return "\(memory)"
+		return "\(value)"
 	}
 	
 	public init() {
@@ -72,12 +72,12 @@ public final class GlobalUniform<T> : MetalMemory, CustomStringConvertible {
 	
 	public convenience init(value: T) {
 		self.init()
-		memory = value
+		self.value = value
 	}
 	
 	private var pointer : UnsafeMutablePointer<T>
 	
-	public var memory : T {
+	public var value : T {
 		@inline(__always) get {
 			return pointer.memory
 		}

@@ -20,12 +20,12 @@ class GlobalUniformTests : XCTestCase {
 	
 	func testInit() {
 		let a = GlobalUniform<Int>()
-		a.memory = 10
-		XCTAssertEqual(a.memory, 10)
+		a.value = 10
+		XCTAssertEqual(a.value, 10)
 		
 		let b = GlobalUniform<Bool>()
-		b.memory = true
-		XCTAssertEqual(b.memory, true)
+		b.value = true
+		XCTAssertEqual(b.value, true)
 		
 	}
 	
@@ -42,10 +42,10 @@ class GlobalUniformTests : XCTestCase {
 	func testA() {
 		let u = GlobalUniform<Int>()
 		
-		u.memory = 10
-		let b = GlobalUniform<S4>()
+		u.value = 10
+		_ = GlobalUniform<S4>()
 
-		XCTAssertEqual(u.memory, 10)
+		XCTAssertEqual(u.value, 10)
 	
 	}
 	

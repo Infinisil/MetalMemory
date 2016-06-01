@@ -5,22 +5,14 @@
 
 var a = GlobalUniform<Int>()
 
-a.memory
-a.memory = 10
-a.memory
-
-globalMemory.bytes
-globalMemory.mem.pointer
+a.value
+a.value = 10
+a.value
 
 var b = GlobalUniform<Bool>()
 
 
-globalMemory.bytes
 
-
-globalMemory.mem.pointer.advancedBy(9)
-
-
-b.memory
-b.memory = true
-b.memory
+b.value
+b.value = true
+b.value

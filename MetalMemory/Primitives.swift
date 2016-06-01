@@ -37,7 +37,7 @@ final class PageMemory {
 	
 	var mem : ConstPageMemory {
 		didSet {
-			NSCopyMemoryPages(oldValue.pointer, mem.pointer, oldValue.bytes)
+			NSCopyMemoryPages(oldValue.pointer, mem.pointer, min(oldValue.bytes, mem.bytes))
 			movedCallbacks.forEach { $0(pointer: mem.pointer, bytes: mem.bytes) }
 		}
 	}
@@ -51,7 +51,7 @@ final class PageMemory {
 		}
 	}
 	
-	init(bytes: Int, policy: Policy = Policy(), movedCallbacks: MovedCallback...) {
+	init(bytes: Int, policy: Policy, movedCallbacks: MovedCallback...) {
 		self.movedCallbacks = movedCallbacks
 		self.policy = policy
 		self.bytes = bytes
