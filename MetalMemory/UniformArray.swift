@@ -24,6 +24,7 @@ final public class UniformArray<T> : MetalMemory {
 	}
 	
 	private func update(pointer: UnsafeMutablePointer<Void>, bytes: Int) {
+		guard bytes > 0 else { return }
 		_metalBuffer = device?.newBufferWithBytesNoCopy(pointer, length: bytes, options: resourceOptions, deallocator: nil)
 		_metalBuffer?.label = label
 	}
