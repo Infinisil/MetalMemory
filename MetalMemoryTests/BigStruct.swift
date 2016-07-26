@@ -7,24 +7,14 @@
 //
 
 
-typealias S1 = UInt8
+import PerfectSize
 
-struct S2 {
-	let v : (S1, S1, S1, S1, S1, S1, S1, S1, S1, S1, S1, S1, S1, S1, S1, S1)
-}
+typealias HalfPage = B.I.O.O.O.O.O.O.O.O.O.O.O
 
-struct S3 {
-	let v : (S2, S2, S2, S2, S2, S2, S2, S2, S2, S2, S2, S2, S2, S2, S2, S2)
-}
+typealias Page = HalfPage.O
+typealias PagePlus1 = HalfPage.I
 
-struct S4 {
-	let v : (S3, S3, S3, S3, S3, S3, S3, S3, S3, S3, S3, S3, S3, S3, S3, S3)
-}
+typealias PageTimes8 = Page.O.O.O
+typealias PageTimes8Plus1 = Page.O.O.I
 
-// Biggest struct possible, 65535 bytes
-struct S5 {
-	let v1 : (S4, S4, S4, S4, S4, S4, S4, S4, S4, S4, S4, S4, S4, S4, S4)
-	let v2 : (S3, S3, S3, S3, S3, S3, S3, S3, S3, S3, S3, S3, S3, S3, S3)
-	let v3 : (S2, S2, S2, S2, S2, S2, S2, S2, S2, S2, S2, S2, S2, S2, S2)
-	let v4 : (S1, S1, S1, S1, S1, S1, S1, S1, S1, S1, S1, S1, S1, S1, S1)
-}
+typealias TenThousand = D.n1.n0.n0.n0.n0

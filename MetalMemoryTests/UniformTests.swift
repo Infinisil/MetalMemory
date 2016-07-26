@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import PerfectSize
 @testable import MetalMemory
 
 class UniformTests: XCTestCase {
@@ -94,11 +95,13 @@ class UniformTests: XCTestCase {
 			u = nil
 		}
 		
-		test(S1)
-		test(S2)
-		test(S3)
-		test(S4)
-		test(S5)
+		
+		test(Page)
+		test(PagePlus1) // One more byte
+		test(PageTimes8) // 8 times page size
+		test(PageTimes8Plus1) // One more byte
+		
+		test(TenThousand) // 10_000 byte struct
 	}
 }
 

@@ -30,18 +30,17 @@ class GlobalUniformTests : XCTestCase {
 	}
 	
 	func testBig() {
-		
-		let a = GlobalUniform<S5>()
+		let a = GlobalUniform<TenThousand>()
 		
 		globalUniformDevice = device
-		XCTAssert(a.buffer.length > sizeof(S5) + 1)
+		XCTAssert(a.buffer.length > sizeof(TenThousand) + 1)
 	}
 	
 	func testA() {
 		let u = GlobalUniform<Int>()
 		
 		u.value = 10
-		_ = GlobalUniform<S4>()
+		_ = GlobalUniform<TenThousand>()
 
 		XCTAssertEqual(u.value, 10)
 	
