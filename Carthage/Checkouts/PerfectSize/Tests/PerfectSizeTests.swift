@@ -59,5 +59,18 @@ class PerfectSizeTests: XCTestCase {
 		XCTAssertEqual(sizeof(D.n2.n9.n8.n6.n8.n7.n1.n7.n9.n8.n7.n5.self), 298687179875)
 		XCTAssertEqual(sizeof(D.n8.n4.n6.n1.n7.n1.n1.n9.n4.n1.n8.n6.n0.self), 8461711941860)
 	}
+
+	func testAdd() {
+		XCTAssertEqual(sizeof((B.I.O.O.O.I.I.O.I.I.self + B.I.O.O.I.O.O.I.self + B.I.O.I.O.I.O.I.I.I.I.I.O.I.O.I.O.I.self).self), 0b100011011 + 0b1001001 + 0b10101011111010101)
+		XCTAssertEqual(sizeof((B.I.O.O.self + B.I.O.O.O.I.O.self + D.n9.n5.self).self), 0b100 + 0b100010 + 95)
+		XCTAssertEqual(sizeof((B.self + B.I.I.O.I.O.O.I.I.I.O.I.O.I.I.O.O.self).self), 0b0 + 0b1101001110101100)
+		XCTAssertEqual(sizeof((B.I.I.O.O.O.I.I.self + D.n8.n5.n9.self + D.n8.n8.self + B.I.I.I.O.O.I.O.O.I.self).self), 0b1100011 + 859 + 88 + 0b111001001)
+		XCTAssertEqual(sizeof((D.n2.n4.self + D.n6.n3.self + D.n7.n0.n9.n6.n4.self + B.self).self), 24 + 63 + 70964 + 0b0)
+		XCTAssertEqual(sizeof((B.I.O.O.O.O.O.O.I.O.O.O.O.I.O.O.I.self + D.n3.n4.n5.self + D.self + B.I.I.I.I.I.I.O.I.O.O.O.I.I.O.self).self), 0b1000000100001001 + 345 + 0 + 0b11111101000110)
+		XCTAssertEqual(sizeof((D.n4.n7.n1.self + B.I.O.I.O.I.O.I.I.O.I.O.O.O.I.I.O.I.self).self), 471 + 0b10101011010001101)
+		XCTAssertEqual(sizeof((D.n2.n8.n2.self + B.I.O.I.self + D.n2.n5.n9.self + B.I.O.O.O.I.O.I.I.O.self).self), 282 + 0b101 + 259 + 0b100010110)
+		XCTAssertEqual(sizeof((B.I.O.O.I.O.O.I.I.I.I.self + B.I.I.self + D.n4.n6.self).self), 0b1001001111 + 0b11 + 46)
+		XCTAssertEqual(sizeof((B.I.I.O.O.O.I.O.O.O.O.I.O.I.self + D.self + B.I.O.O.I.O.O.I.I.O.O.I.self).self), 0b1100010000101 + 0 + 0b10010011001)
+	}
 }
 

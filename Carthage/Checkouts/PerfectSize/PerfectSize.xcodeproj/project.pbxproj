@@ -34,6 +34,10 @@
 		B61BCAC81D466450003D8144 /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61BCA7D1D466206003D8144 /* Size.swift */; };
 		B61BCAC91D466450003D8144 /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61BCA7D1D466206003D8144 /* Size.swift */; };
 		B61BCACA1D466451003D8144 /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61BCA7D1D466206003D8144 /* Size.swift */; };
+		B6CBE3BF1D4817B80029A977 /* Add.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CBE3BE1D4817B80029A977 /* Add.swift */; };
+		B6CBE3C01D4817B80029A977 /* Add.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CBE3BE1D4817B80029A977 /* Add.swift */; };
+		B6CBE3C11D4817B80029A977 /* Add.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CBE3BE1D4817B80029A977 /* Add.swift */; };
+		B6CBE3C21D4817B80029A977 /* Add.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CBE3BE1D4817B80029A977 /* Add.swift */; };
 		B6F639931D46835900373D5F /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F639921D46835900373D5F /* main.swift */; };
 		B6F639A41D46983700373D5F /* Binary.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F639A31D46983700373D5F /* Binary.swift */; };
 		B6F639A51D46983700373D5F /* Binary.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F639A31D46983700373D5F /* Binary.swift */; };
@@ -109,6 +113,7 @@
 		B61BCAA51D4663DD003D8144 /* Info watchOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info watchOS.plist"; path = "Supporting Files/Info watchOS.plist"; sourceTree = SOURCE_ROOT; };
 		B61BCAAE1D4663E9003D8144 /* PerfectSize.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PerfectSize.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B61BCAB21D4663E9003D8144 /* Info tvOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info tvOS.plist"; path = "Supporting Files/Info tvOS.plist"; sourceTree = SOURCE_ROOT; };
+		B6CBE3BE1D4817B80029A977 /* Add.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Add.swift; sourceTree = "<group>"; };
 		B6F639901D46835900373D5F /* TestGenerator */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TestGenerator; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6F639921D46835900373D5F /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		B6F639A31D46983700373D5F /* Binary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Binary.swift; sourceTree = "<group>"; };
@@ -192,6 +197,7 @@
 				B61BCA7D1D466206003D8144 /* Size.swift */,
 				B6F639A81D46988600373D5F /* Decimal.swift */,
 				B6F639A31D46983700373D5F /* Binary.swift */,
+				B6CBE3BE1D4817B80029A977 /* Add.swift */,
 				B61BCACB1D46647F003D8144 /* Supporting Files */,
 			);
 			path = Source;
@@ -200,8 +206,8 @@
 		B61BCA731D4661F5003D8144 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				B6F639911D46835900373D5F /* TestGenerator */,
 				B61BCA741D4661F5003D8144 /* PerfectSizeTests.swift */,
+				B6F639911D46835900373D5F /* TestGenerator */,
 				B61BCA761D4661F5003D8144 /* Info.plist */,
 			);
 			path = Tests;
@@ -474,6 +480,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6F639A91D46988600373D5F /* Decimal.swift in Sources */,
+				B6CBE3BF1D4817B80029A977 /* Add.swift in Sources */,
 				B6F639A41D46983700373D5F /* Binary.swift in Sources */,
 				B61BCA7E1D466206003D8144 /* Size.swift in Sources */,
 			);
@@ -492,6 +499,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6F639AA1D46988600373D5F /* Decimal.swift in Sources */,
+				B6CBE3C01D4817B80029A977 /* Add.swift in Sources */,
 				B6F639A51D46983700373D5F /* Binary.swift in Sources */,
 				B61BCAC81D466450003D8144 /* Size.swift in Sources */,
 			);
@@ -502,6 +510,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6F639AC1D46988600373D5F /* Decimal.swift in Sources */,
+				B6CBE3C21D4817B80029A977 /* Add.swift in Sources */,
 				B6F639A71D46983700373D5F /* Binary.swift in Sources */,
 				B61BCACA1D466451003D8144 /* Size.swift in Sources */,
 			);
@@ -512,6 +521,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6F639AB1D46988600373D5F /* Decimal.swift in Sources */,
+				B6CBE3C11D4817B80029A977 /* Add.swift in Sources */,
 				B6F639A61D46983700373D5F /* Binary.swift in Sources */,
 				B61BCAC91D466450003D8144 /* Size.swift in Sources */,
 			);
