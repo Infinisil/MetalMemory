@@ -20,8 +20,10 @@ func roundUpToPowerOf2(n: Int) -> Int {
 
 // Fatal error mocking, to be able to test an expected fatal
 
+#if DEBUG
 var expectedFatal = false
 @noreturn func fatalError(@autoclosure message: () -> String = "", file: StaticString = #file, line: UInt = #line) {
 	if expectedFatal { NSThread.exit() }
 	Swift.fatalError(message, file: file, line: line)
 }
+#endif

@@ -582,12 +582,14 @@
 		0B4307B31CEF0A1400A11DA4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				OTHER_SWIFT_FLAGS = "-DDEBUG";
 			};
 			name = Debug;
 		};
 		0B4307B41CEF0A1400A11DA4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				OTHER_SWIFT_FLAGS = "-DRELEASE";
 			};
 			name = Release;
 		};
