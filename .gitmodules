@@ -1,0 +1,2 @@
+[submodule "Carthage/Checkouts/PerfectSize"]
+	url = https://github.com/Infinisil/PerfectSize.git
