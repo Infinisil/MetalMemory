@@ -55,6 +55,7 @@ final class PageMemory {
 		self.movedCallbacks = movedCallbacks
 		self.policy = policy
 		self.bytes = bytes
-		mem = ConstPageMemory(bytes: policy.bytesNeeded(oldBytes: 0, newBytes: bytes))
+		let bytesNeeded = policy.bytesNeeded(oldBytes: 0, newBytes: bytes)
+		mem = ConstPageMemory(bytes: bytesNeeded)
 	}
 }

@@ -24,7 +24,6 @@ final public class UniformArray<T> : MetalMemory {
 	}
 	
 	private func update(pointer: UnsafeMutablePointer<Void>, bytes: Int) {
-		guard bytes > 0 else { return }
 		_metalBuffer = device?.newBufferWithBytesNoCopy(pointer, length: bytes, options: resourceOptions, deallocator: nil)
 		_metalBuffer?.label = label
 	}
@@ -57,14 +56,18 @@ final public class UniformArray<T> : MetalMemory {
 	
 	public var count : Int {
 		didSet {
-			memory.bytes = count * strideof(T)
+			memory.bytes = UniformArray.getBytesNeeded(count)
 		}
+	}
+	
+	static func getBytesNeeded(count: Int) -> Int {
+		return max(1, count) * strideof(T)
 	}
 	
 	public init(count: Int, policy: Policy = defaultAllocationPolicy) {
 		self.policy = policy
 		self.count = count
-		memory = PageMemory(bytes: count * strideof(T), policy: policy)
+		memory = PageMemory(bytes: UniformArray.getBytesNeeded(count), policy: policy)
 		memory.movedCallbacks.append(update)
 	}
 	
