@@ -175,8 +175,8 @@
 			isa = PBXGroup;
 			children = (
 				0BB204C21CF2F970001909AA /* Playground.playground */,
-				0B4307D01CEF0A5200A11DA4 /* MetalMemory */,
-				0B4307EF1CEF106300A11DA4 /* MetalMemoryTests */,
+				0B4307D01CEF0A5200A11DA4 /* Source */,
+				0B4307EF1CEF106300A11DA4 /* Tests */,
 				0B4307D61CEF0ECF00A11DA4 /* Supporting Files */,
 				B6CBE3A31D480BE50029A977 /* Frameworks */,
 				0B4307BB1CEF0A2200A11DA4 /* Products */,
@@ -196,7 +196,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		0B4307D01CEF0A5200A11DA4 /* MetalMemory */ = {
+		0B4307D01CEF0A5200A11DA4 /* Source */ = {
 			isa = PBXGroup;
 			children = (
 				0BB204D01CF31C23001909AA /* Interface.swift */,
@@ -205,6 +205,7 @@
 				0BB204CF1CF3186B001909AA /* Data structures */,
 				0B2E98341CFDB9BE00A633A0 /* Utils */,
 			);
+			name = Source;
 			path = MetalMemory;
 			sourceTree = "<group>";
 		};
@@ -221,7 +222,7 @@
 			path = MetalMemory;
 			sourceTree = "<group>";
 		};
-		0B4307EF1CEF106300A11DA4 /* MetalMemoryTests */ = {
+		0B4307EF1CEF106300A11DA4 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
 				0B29EFBC1CEF2361006DD052 /* UniformTests.swift */,
@@ -229,6 +230,7 @@
 				0B2E982C1CFD84FB00A633A0 /* UniformArrayTests.swift */,
 				B6CBE3A71D480FCA0029A977 /* BigStruct.swift */,
 			);
+			name = Tests;
 			path = MetalMemoryTests;
 			sourceTree = "<group>";
 		};
