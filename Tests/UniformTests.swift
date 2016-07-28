@@ -8,6 +8,7 @@
 
 import XCTest
 import PerfectSize
+import Metal
 @testable import MetalMemory
 
 class UniformTests: XCTestCase {

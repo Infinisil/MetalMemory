@@ -14,16 +14,10 @@
 		0B29EFBA1CEF21AC006DD052 /* UniformArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B29EFB81CEF21AC006DD052 /* UniformArray.swift */; };
 		0B29EFBB1CEF21AC006DD052 /* UniformArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B29EFB81CEF21AC006DD052 /* UniformArray.swift */; };
 		0B29EFBD1CEF2361006DD052 /* UniformTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B29EFBC1CEF2361006DD052 /* UniformTests.swift */; };
-		0B29EFBE1CEF2361006DD052 /* UniformTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B29EFBC1CEF2361006DD052 /* UniformTests.swift */; };
-		0B29EFBF1CEF2361006DD052 /* UniformTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B29EFBC1CEF2361006DD052 /* UniformTests.swift */; };
 		0B2E982D1CFD84FB00A633A0 /* UniformArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2E982C1CFD84FB00A633A0 /* UniformArrayTests.swift */; };
-		0B2E982E1CFD84FB00A633A0 /* UniformArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2E982C1CFD84FB00A633A0 /* UniformArrayTests.swift */; };
-		0B2E982F1CFD84FB00A633A0 /* UniformArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2E982C1CFD84FB00A633A0 /* UniformArrayTests.swift */; };
 		0B4307CB1CEF0A2E00A11DA4 /* MetalMemory.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B4307CA1CEF0A2E00A11DA4 /* MetalMemory.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0B4307D51CEF0E9400A11DA4 /* MetalMemory.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B4307CA1CEF0A2E00A11DA4 /* MetalMemory.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0B4307E41CEF0F9A00A11DA4 /* MetalMemory.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B4307CA1CEF0A2E00A11DA4 /* MetalMemory.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0B4308081CEF11D900A11DA4 /* MetalMemory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B4307BA1CEF0A2200A11DA4 /* MetalMemory.framework */; };
-		0B4308181CEF128B00A11DA4 /* MetalMemory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B4307DC1CEF0F1900A11DA4 /* MetalMemory.framework */; };
 		0B6D3A011CEF40CF00C719CB /* MetalMemory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B4307C81CEF0A2E00A11DA4 /* MetalMemory.framework */; };
 		0B6D3A0A1CEF925100C719CB /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6D3A091CEF925100C719CB /* Utils.swift */; };
 		0B6D3A0B1CEF925100C719CB /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6D3A091CEF925100C719CB /* Utils.swift */; };
@@ -41,9 +35,6 @@
 		0BB204D21CF31C23001909AA /* Interface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB204D01CF31C23001909AA /* Interface.swift */; };
 		0BB204D31CF31C23001909AA /* Interface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB204D01CF31C23001909AA /* Interface.swift */; };
 		0BB204D51CF31D77001909AA /* GlobalUniformTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB204D41CF31D77001909AA /* GlobalUniformTests.swift */; };
-		0BB204D61CF31D77001909AA /* GlobalUniformTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB204D41CF31D77001909AA /* GlobalUniformTests.swift */; };
-		0BB204D71CF31D77001909AA /* GlobalUniformTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB204D41CF31D77001909AA /* GlobalUniformTests.swift */; };
-		0BB6162C1CEF12DE00D4678E /* Info-tvOS.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0BB6162B1CEF12DE00D4678E /* Info-tvOS.plist */; };
 		0BCA22A31CF25D9A0002637A /* GlobalUniform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCA229F1CF25D970002637A /* GlobalUniform.swift */; };
 		0BCA22A41CF25D9A0002637A /* GlobalUniform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCA229F1CF25D970002637A /* GlobalUniform.swift */; };
 		0BCA22A51CF25D9A0002637A /* GlobalUniform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCA229F1CF25D970002637A /* GlobalUniform.swift */; };
@@ -52,11 +43,7 @@
 		B6236B7C1D4945D600C468DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6236B7A1D4945D600C468DD /* Main.storyboard */; };
 		B6236B821D494A1A00C468DD /* shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = B6236B811D494A1A00C468DD /* shaders.metal */; };
 		B6CBE3A41D480C220029A977 /* PerfectSize.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6CBE39D1D480B540029A977 /* PerfectSize.framework */; };
-		B6CBE3A51D480C270029A977 /* PerfectSize.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6CBE39F1D480BD40029A977 /* PerfectSize.framework */; };
-		B6CBE3A61D480C2D0029A977 /* PerfectSize.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6CBE3A11D480BDB0029A977 /* PerfectSize.framework */; };
 		B6CBE3AB1D4811400029A977 /* BigStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CBE3A71D480FCA0029A977 /* BigStruct.swift */; };
-		B6CBE3AC1D4811400029A977 /* BigStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CBE3A71D480FCA0029A977 /* BigStruct.swift */; };
-		B6CBE3AD1D4811410029A977 /* BigStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CBE3A71D480FCA0029A977 /* BigStruct.swift */; };
 		B6EA98031D4A379C00FA5BD2 /* Willow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6EA98021D4A379C00FA5BD2 /* Willow.framework */; };
 		B6EA98051D4A37A300FA5BD2 /* Willow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6EA98041D4A37A300FA5BD2 /* Willow.framework */; };
 		B6EA98071D4A37AD00FA5BD2 /* Willow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6EA98061D4A37AD00FA5BD2 /* Willow.framework */; };
@@ -74,20 +61,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 0B4307C71CEF0A2E00A11DA4;
 			remoteInfo = MetalMemoryOSX;
-		};
-		0B4308091CEF11D900A11DA4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0B4307AF1CEF0A1400A11DA4 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0B4307B91CEF0A2200A11DA4;
-			remoteInfo = MetalMemoryiOS;
-		};
-		0B4308191CEF128B00A11DA4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0B4307AF1CEF0A1400A11DA4 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0B4307DB1CEF0F1900A11DA4;
-			remoteInfo = MetalMemorytvOS;
 		};
 		B6CA4FE61D495B4B005280A4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -119,17 +92,14 @@
 		0B29EFBC1CEF2361006DD052 /* UniformTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniformTests.swift; sourceTree = "<group>"; };
 		0B2E982C1CFD84FB00A633A0 /* UniformArrayTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniformArrayTests.swift; sourceTree = "<group>"; };
 		0B4307BA1CEF0A2200A11DA4 /* MetalMemory.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MetalMemory.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		0B4307BF1CEF0A2200A11DA4 /* Info-iOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info-iOS.plist"; path = "MetalMemory/Info-iOS.plist"; sourceTree = SOURCE_ROOT; };
+		0B4307BF1CEF0A2200A11DA4 /* Info-iOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info-iOS.plist"; path = "Source/Supporting Files/Info-iOS.plist"; sourceTree = SOURCE_ROOT; };
 		0B4307C81CEF0A2E00A11DA4 /* MetalMemory.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MetalMemory.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		0B4307CA1CEF0A2E00A11DA4 /* MetalMemory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MetalMemory.h; path = MetalMemory/MetalMemory.h; sourceTree = SOURCE_ROOT; };
-		0B4307CC1CEF0A2E00A11DA4 /* Info-OSX.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info-OSX.plist"; path = "MetalMemory/Info-OSX.plist"; sourceTree = SOURCE_ROOT; };
+		0B4307CA1CEF0A2E00A11DA4 /* MetalMemory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MetalMemory.h; path = "Source/Supporting Files/MetalMemory.h"; sourceTree = SOURCE_ROOT; };
+		0B4307CC1CEF0A2E00A11DA4 /* Info-macOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info-macOS.plist"; path = "Source/Supporting Files/Info-macOS.plist"; sourceTree = SOURCE_ROOT; };
 		0B4307DC1CEF0F1900A11DA4 /* MetalMemory.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MetalMemory.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		0B4307E01CEF0F1900A11DA4 /* Info-tvOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info-tvOS.plist"; path = "MetalMemory/Info-tvOS.plist"; sourceTree = SOURCE_ROOT; };
-		0B4307F41CEF109B00A11DA4 /* MetalMemoryTests-macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MetalMemoryTests-macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0B4307F81CEF109B00A11DA4 /* Info-OSX.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = "Info-OSX.plist"; path = "MetalMemoryTests/Info-OSX.plist"; sourceTree = "<group>"; };
-		0B4308031CEF11D900A11DA4 /* MetalMemoryTests-iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MetalMemoryTests-iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0B4308071CEF11D900A11DA4 /* Info-iOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info-iOS.plist"; path = "MetalMemoryTests/Info-iOS.plist"; sourceTree = SOURCE_ROOT; };
-		0B4308131CEF128B00A11DA4 /* MetalMemoryTests-tvOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MetalMemoryTests-tvOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B4307E01CEF0F1900A11DA4 /* Info-tvOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info-tvOS.plist"; path = "Source/Supporting Files/Info-tvOS.plist"; sourceTree = SOURCE_ROOT; };
+		0B4307F41CEF109B00A11DA4 /* MetalMemoryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MetalMemoryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B4307F81CEF109B00A11DA4 /* Info-macOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-macOS.plist"; sourceTree = "<group>"; };
 		0B6D3A091CEF925100C719CB /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		0BB204C21CF2F970001909AA /* Playground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Playground.playground; sourceTree = "<group>"; };
 		0BB204C31CF2FF65001909AA /* MetalMemory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalMemory.swift; sourceTree = "<group>"; };
@@ -137,7 +107,6 @@
 		0BB204CB1CF303E9001909AA /* AllocationPolicy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllocationPolicy.swift; sourceTree = "<group>"; };
 		0BB204D01CF31C23001909AA /* Interface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interface.swift; sourceTree = "<group>"; };
 		0BB204D41CF31D77001909AA /* GlobalUniformTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalUniformTests.swift; sourceTree = "<group>"; };
-		0BB6162B1CEF12DE00D4678E /* Info-tvOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Info-tvOS.plist"; path = "MetalMemoryTests/Info-tvOS.plist"; sourceTree = SOURCE_ROOT; };
 		0BCA229F1CF25D970002637A /* GlobalUniform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalUniform.swift; sourceTree = "<group>"; };
 		B6236B721D4945D500C468DD /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6236B741D4945D600C468DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -189,24 +158,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0B4308001CEF11D900A11DA4 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0B4308081CEF11D900A11DA4 /* MetalMemory.framework in Frameworks */,
-				B6CBE3A51D480C270029A977 /* PerfectSize.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0B4308101CEF128B00A11DA4 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B6CBE3A61D480C2D0029A977 /* PerfectSize.framework in Frameworks */,
-				0B4308181CEF128B00A11DA4 /* MetalMemory.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		B6236B6F1D4945D500C468DD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -245,9 +196,7 @@
 				0B4307BA1CEF0A2200A11DA4 /* MetalMemory.framework */,
 				0B4307C81CEF0A2E00A11DA4 /* MetalMemory.framework */,
 				0B4307DC1CEF0F1900A11DA4 /* MetalMemory.framework */,
-				0B4307F41CEF109B00A11DA4 /* MetalMemoryTests-macOS.xctest */,
-				0B4308031CEF11D900A11DA4 /* MetalMemoryTests-iOS.xctest */,
-				0B4308131CEF128B00A11DA4 /* MetalMemoryTests-tvOS.xctest */,
+				0B4307F41CEF109B00A11DA4 /* MetalMemoryTests.xctest */,
 				B6236B721D4945D500C468DD /* Example.app */,
 			);
 			name = Products;
@@ -263,20 +212,18 @@
 				0B2E98341CFDB9BE00A633A0 /* Utils */,
 				0B4307D61CEF0ECF00A11DA4 /* Supporting Files */,
 			);
-			name = Source;
-			path = MetalMemory;
+			path = Source;
 			sourceTree = "<group>";
 		};
 		0B4307D61CEF0ECF00A11DA4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
 				0B4307CA1CEF0A2E00A11DA4 /* MetalMemory.h */,
-				0B4307CC1CEF0A2E00A11DA4 /* Info-OSX.plist */,
+				0B4307CC1CEF0A2E00A11DA4 /* Info-macOS.plist */,
 				0B4307BF1CEF0A2200A11DA4 /* Info-iOS.plist */,
 				0B4307E01CEF0F1900A11DA4 /* Info-tvOS.plist */,
-				0B4307F51CEF109B00A11DA4 /* Tests */,
 			);
-			name = "Supporting Files";
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		0B4307EF1CEF106300A11DA4 /* Tests */ = {
@@ -286,20 +233,18 @@
 				0BB204D41CF31D77001909AA /* GlobalUniformTests.swift */,
 				0B2E982C1CFD84FB00A633A0 /* UniformArrayTests.swift */,
 				B6CBE3A71D480FCA0029A977 /* BigStruct.swift */,
+				0B4307F51CEF109B00A11DA4 /* Supporting Files */,
 			);
-			name = Tests;
-			path = MetalMemoryTests;
+			path = Tests;
 			sourceTree = "<group>";
 		};
-		0B4307F51CEF109B00A11DA4 /* Tests */ = {
+		0B4307F51CEF109B00A11DA4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				0B4307F81CEF109B00A11DA4 /* Info-OSX.plist */,
-				0B4308071CEF11D900A11DA4 /* Info-iOS.plist */,
-				0BB6162B1CEF12DE00D4678E /* Info-tvOS.plist */,
+				0B4307F81CEF109B00A11DA4 /* Info-macOS.plist */,
 			);
-			name = Tests;
-			path = "MetalMemoryTests OSX";
+			name = "Supporting Files";
+			path = "Tests/Supporting Files";
 			sourceTree = SOURCE_ROOT;
 		};
 		0BB204CF1CF3186B001909AA /* Data structures */ = {
@@ -447,9 +392,9 @@
 			productReference = 0B4307DC1CEF0F1900A11DA4 /* MetalMemory.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		0B4307F31CEF109B00A11DA4 /* MetalMemoryTests-macOS */ = {
+		0B4307F31CEF109B00A11DA4 /* MetalMemoryTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0B4307FC1CEF109B00A11DA4 /* Build configuration list for PBXNativeTarget "MetalMemoryTests-macOS" */;
+			buildConfigurationList = 0B4307FC1CEF109B00A11DA4 /* Build configuration list for PBXNativeTarget "MetalMemoryTests" */;
 			buildPhases = (
 				0B4307F01CEF109B00A11DA4 /* Sources */,
 				0B4307F11CEF109B00A11DA4 /* Frameworks */,
@@ -460,45 +405,9 @@
 			dependencies = (
 				0B4307FB1CEF109B00A11DA4 /* PBXTargetDependency */,
 			);
-			name = "MetalMemoryTests-macOS";
+			name = MetalMemoryTests;
 			productName = "MetalMemoryTests OSX";
-			productReference = 0B4307F41CEF109B00A11DA4 /* MetalMemoryTests-macOS.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		0B4308021CEF11D900A11DA4 /* MetalMemoryTests-iOS */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 0B43080B1CEF11D900A11DA4 /* Build configuration list for PBXNativeTarget "MetalMemoryTests-iOS" */;
-			buildPhases = (
-				0B4307FF1CEF11D900A11DA4 /* Sources */,
-				0B4308001CEF11D900A11DA4 /* Frameworks */,
-				0B4308011CEF11D900A11DA4 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				0B43080A1CEF11D900A11DA4 /* PBXTargetDependency */,
-			);
-			name = "MetalMemoryTests-iOS";
-			productName = "MetalMemoryTests iOS";
-			productReference = 0B4308031CEF11D900A11DA4 /* MetalMemoryTests-iOS.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		0B4308121CEF128B00A11DA4 /* MetalMemoryTests-tvOS */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 0B43081B1CEF128B00A11DA4 /* Build configuration list for PBXNativeTarget "MetalMemoryTests-tvOS" */;
-			buildPhases = (
-				0B43080F1CEF128B00A11DA4 /* Sources */,
-				0B4308101CEF128B00A11DA4 /* Frameworks */,
-				0B4308111CEF128B00A11DA4 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				0B43081A1CEF128B00A11DA4 /* PBXTargetDependency */,
-			);
-			name = "MetalMemoryTests-tvOS";
-			productName = "MetalMemoryTests tvOS";
-			productReference = 0B4308131CEF128B00A11DA4 /* MetalMemoryTests-tvOS.xctest */;
+			productReference = 0B4307F41CEF109B00A11DA4 /* MetalMemoryTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		B6236B711D4945D500C468DD /* Example */ = {
@@ -541,12 +450,6 @@
 					0B4307F31CEF109B00A11DA4 = {
 						CreatedOnToolsVersion = 7.3.1;
 					};
-					0B4308021CEF11D900A11DA4 = {
-						CreatedOnToolsVersion = 7.3.1;
-					};
-					0B4308121CEF128B00A11DA4 = {
-						CreatedOnToolsVersion = 7.3.1;
-					};
 					B6236B711D4945D500C468DD = {
 						CreatedOnToolsVersion = 7.3.1;
 					};
@@ -568,9 +471,7 @@
 				0B4307C71CEF0A2E00A11DA4 /* MetalMemory-macOS */,
 				0B4307B91CEF0A2200A11DA4 /* MetalMemory-iOS */,
 				0B4307DB1CEF0F1900A11DA4 /* MetalMemory-tvOS */,
-				0B4307F31CEF109B00A11DA4 /* MetalMemoryTests-macOS */,
-				0B4308021CEF11D900A11DA4 /* MetalMemoryTests-iOS */,
-				0B4308121CEF128B00A11DA4 /* MetalMemoryTests-tvOS */,
+				0B4307F31CEF109B00A11DA4 /* MetalMemoryTests */,
 				B6236B711D4945D500C468DD /* Example */,
 			);
 		};
@@ -581,7 +482,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0BB6162C1CEF12DE00D4678E /* Info-tvOS.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -600,20 +500,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		0B4307F21CEF109B00A11DA4 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0B4308011CEF11D900A11DA4 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0B4308111CEF128B00A11DA4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -687,28 +573,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0B4307FF1CEF11D900A11DA4 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0B2E982E1CFD84FB00A633A0 /* UniformArrayTests.swift in Sources */,
-				B6CBE3AC1D4811400029A977 /* BigStruct.swift in Sources */,
-				0B29EFBE1CEF2361006DD052 /* UniformTests.swift in Sources */,
-				0BB204D61CF31D77001909AA /* GlobalUniformTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0B43080F1CEF128B00A11DA4 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0B2E982F1CFD84FB00A633A0 /* UniformArrayTests.swift in Sources */,
-				B6CBE3AD1D4811410029A977 /* BigStruct.swift in Sources */,
-				0B29EFBF1CEF2361006DD052 /* UniformTests.swift in Sources */,
-				0BB204D71CF31D77001909AA /* GlobalUniformTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		B6236B6E1D4945D500C468DD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -727,16 +591,6 @@
 			isa = PBXTargetDependency;
 			target = 0B4307C71CEF0A2E00A11DA4 /* MetalMemory-macOS */;
 			targetProxy = 0B4307FA1CEF109B00A11DA4 /* PBXContainerItemProxy */;
-		};
-		0B43080A1CEF11D900A11DA4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 0B4307B91CEF0A2200A11DA4 /* MetalMemory-iOS */;
-			targetProxy = 0B4308091CEF11D900A11DA4 /* PBXContainerItemProxy */;
-		};
-		0B43081A1CEF128B00A11DA4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 0B4307DB1CEF0F1900A11DA4 /* MetalMemory-tvOS */;
-			targetProxy = 0B4308191CEF128B00A11DA4 /* PBXContainerItemProxy */;
 		};
 		B6CA4FE71D495B4B005280A4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -819,7 +673,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "MetalMemory/Info-iOS.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Source/Supporting Files/Info-iOS.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -877,7 +731,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "MetalMemory/Info-iOS.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Source/Supporting Files/Info-iOS.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -939,7 +793,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "MetalMemory/Info-OSX.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Source/Supporting Files/Info-macOS.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
@@ -995,7 +849,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "MetalMemory/Info-OSX.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Source/Supporting Files/Info-macOS.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
@@ -1055,7 +909,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "MetalMemory/Info-tvOS.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Source/Supporting Files/Info-tvOS.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
@@ -1111,7 +965,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "MetalMemory/Info-tvOS.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Source/Supporting Files/Info-tvOS.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
@@ -1166,7 +1020,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "MetalMemoryTests/Info-OSX.plist";
+				INFOPLIST_FILE = "Tests/Supporting Files/Info-macOS.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks $(PROJECT_DIR)/Carthage/Build/Mac";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = YES;
@@ -1211,209 +1065,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "MetalMemoryTests/Info-OSX.plist";
+				INFOPLIST_FILE = "Tests/Supporting Files/Info-macOS.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks $(PROJECT_DIR)/Carthage/Build/Mac";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "io.infinisil.MetalMemoryTests-OSX";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-			};
-			name = Release;
-		};
-		0B43080C1CEF11D900A11DA4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "MetalMemoryTests/Info-iOS.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(PROJECT_DIR)/Carthage/Build/iOS";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "io.infinisil.MetalMemoryTests-iOS";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-			};
-			name = Debug;
-		};
-		0B43080D1CEF11D900A11DA4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "MetalMemoryTests/Info-iOS.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(PROJECT_DIR)/Carthage/Build/iOS";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = "io.infinisil.MetalMemoryTests-iOS";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		0B43081C1CEF128B00A11DA4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/tvOS",
-				);
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "MetalMemoryTests/Info-tvOS.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(PROJECT_DIR)/Carthage/Build/tvOS";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "io.infinisil.MetalMemoryTests-tvOS";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = appletvos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TVOS_DEPLOYMENT_TARGET = 9.2;
-			};
-			name = Debug;
-		};
-		0B43081D1CEF128B00A11DA4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/tvOS",
-				);
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "MetalMemoryTests/Info-tvOS.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(PROJECT_DIR)/Carthage/Build/tvOS";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = "io.infinisil.MetalMemoryTests-tvOS";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = appletvos;
-				TVOS_DEPLOYMENT_TARGET = 9.2;
-				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
@@ -1560,29 +1218,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0B4307FC1CEF109B00A11DA4 /* Build configuration list for PBXNativeTarget "MetalMemoryTests-macOS" */ = {
+		0B4307FC1CEF109B00A11DA4 /* Build configuration list for PBXNativeTarget "MetalMemoryTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0B4307FD1CEF109B00A11DA4 /* Debug */,
 				0B4307FE1CEF109B00A11DA4 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		0B43080B1CEF11D900A11DA4 /* Build configuration list for PBXNativeTarget "MetalMemoryTests-iOS" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				0B43080C1CEF11D900A11DA4 /* Debug */,
-				0B43080D1CEF11D900A11DA4 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		0B43081B1CEF128B00A11DA4 /* Build configuration list for PBXNativeTarget "MetalMemoryTests-tvOS" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				0B43081C1CEF128B00A11DA4 /* Debug */,
-				0B43081D1CEF128B00A11DA4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
