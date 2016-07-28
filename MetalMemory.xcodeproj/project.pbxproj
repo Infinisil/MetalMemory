@@ -42,6 +42,10 @@
 		B6236B771D4945D600C468DD /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6236B761D4945D600C468DD /* View.swift */; };
 		B6236B7C1D4945D600C468DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6236B7A1D4945D600C468DD /* Main.storyboard */; };
 		B6236B821D494A1A00C468DD /* shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = B6236B811D494A1A00C468DD /* shaders.metal */; };
+		B67718F21D4A9E21000D4634 /* MetalMemory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B4307BA1CEF0A2200A11DA4 /* MetalMemory.framework */; };
+		B67718F31D4A9E21000D4634 /* MetalMemory.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0B4307BA1CEF0A2200A11DA4 /* MetalMemory.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B67718F51D4A9E27000D4634 /* Willow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6EA98041D4A37A300FA5BD2 /* Willow.framework */; };
+		B67718F61D4A9E27000D4634 /* Willow.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B6EA98041D4A37A300FA5BD2 /* Willow.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B6CBE3A41D480C220029A977 /* PerfectSize.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6CBE39D1D480B540029A977 /* PerfectSize.framework */; };
 		B6CBE3AB1D4811400029A977 /* BigStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CBE3A71D480FCA0029A977 /* BigStruct.swift */; };
 		B6EA98031D4A379C00FA5BD2 /* Willow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6EA98021D4A379C00FA5BD2 /* Willow.framework */; };
@@ -68,6 +72,13 @@
 			remoteGlobalIDString = 0B4307C71CEF0A2E00A11DA4;
 			remoteInfo = MetalMemoryOSX;
 		};
+		B67718EB1D4A9BB0000D4634 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0B4307AF1CEF0A1400A11DA4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0B4307B91CEF0A2200A11DA4;
+			remoteInfo = "MetalMemory-iOS";
+		};
 		B6CA4FE61D495B4B005280A4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0B4307AF1CEF0A1400A11DA4 /* Project object */;
@@ -78,6 +89,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		B67718F41D4A9E21000D4634 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B67718F61D4A9E27000D4634 /* Willow.framework in Embed Frameworks */,
+				B67718F31D4A9E21000D4634 /* MetalMemory.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B6EA98331D4A3AE500FA5BD2 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -183,6 +206,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B67718F51D4A9E27000D4634 /* Willow.framework in Frameworks */,
+				B67718F21D4A9E21000D4634 /* MetalMemory.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,10 +509,12 @@
 				B6EA985E1D4A4AD800FA5BD2 /* Sources */,
 				B6EA985F1D4A4AD800FA5BD2 /* Frameworks */,
 				B6EA98601D4A4AD800FA5BD2 /* Resources */,
+				B67718F41D4A9E21000D4634 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				B67718EC1D4A9BB0000D4634 /* PBXTargetDependency */,
 			);
 			name = "Example-iOS";
 			productName = "Example-iOS";
@@ -681,6 +708,11 @@
 			target = 0B4307C71CEF0A2E00A11DA4 /* MetalMemory-macOS */;
 			targetProxy = 0B4307FA1CEF109B00A11DA4 /* PBXContainerItemProxy */;
 		};
+		B67718EC1D4A9BB0000D4634 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0B4307B91CEF0A2200A11DA4 /* MetalMemory-iOS */;
+			targetProxy = B67718EB1D4A9BB0000D4634 /* PBXContainerItemProxy */;
+		};
 		B6CA4FE71D495B4B005280A4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 0B4307C71CEF0A2E00A11DA4 /* MetalMemory-macOS */;
@@ -736,6 +768,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -750,6 +783,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
@@ -780,7 +814,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/Source/Supporting Files/Info-iOS.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -800,6 +834,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -814,6 +849,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
@@ -838,7 +874,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/Source/Supporting Files/Info-iOS.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = io.infinisil.MetalMemory;
@@ -857,6 +893,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -919,6 +956,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -973,6 +1011,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -1025,7 +1064,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 9.2;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -1035,6 +1074,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -1079,7 +1119,7 @@
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 9.2;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1301,11 +1341,16 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: infinisil@icloud.com (5K2CE23NX4)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -1327,6 +1372,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "io.infinisil.Example-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1352,11 +1398,16 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: infinisil@icloud.com (5K2CE23NX4)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -1371,6 +1422,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "io.infinisil.Example-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -1441,6 +1493,7 @@
 				B6EA98721D4A4AD800FA5BD2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
