@@ -1,3 +1,6 @@
 [submodule "Carthage/Checkouts/PerfectSize"]
 	path = Carthage/Checkouts/PerfectSize
 	url = https://github.com/Infinisil/PerfectSize.git
+[submodule "Carthage/Checkouts/Willow"]
+	path = Carthage/Checkouts/Willow
+	url = https://github.com/Nike-Inc/Willow.git

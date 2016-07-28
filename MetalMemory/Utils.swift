@@ -7,6 +7,9 @@
 //
 
 import Foundation
+import Willow
+
+let log = Logger(configuration: LoggerConfiguration.timestampConfiguration())
 
 func roundUpToPowerOf2(n: Int) -> Int {
 	var n = n - 1

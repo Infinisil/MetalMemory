@@ -48,8 +48,7 @@
 		0BCA22A41CF25D9A0002637A /* GlobalUniform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCA229F1CF25D970002637A /* GlobalUniform.swift */; };
 		0BCA22A51CF25D9A0002637A /* GlobalUniform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCA229F1CF25D970002637A /* GlobalUniform.swift */; };
 		B6236B751D4945D600C468DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6236B741D4945D600C468DD /* AppDelegate.swift */; };
-		B6236B771D4945D600C468DD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6236B761D4945D600C468DD /* ViewController.swift */; };
-		B6236B791D4945D600C468DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6236B781D4945D600C468DD /* Assets.xcassets */; };
+		B6236B771D4945D600C468DD /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6236B761D4945D600C468DD /* View.swift */; };
 		B6236B7C1D4945D600C468DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6236B7A1D4945D600C468DD /* Main.storyboard */; };
 		B6236B821D494A1A00C468DD /* shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = B6236B811D494A1A00C468DD /* shaders.metal */; };
 		B6CBE3A41D480C220029A977 /* PerfectSize.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6CBE39D1D480B540029A977 /* PerfectSize.framework */; };
@@ -58,6 +57,14 @@
 		B6CBE3AB1D4811400029A977 /* BigStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CBE3A71D480FCA0029A977 /* BigStruct.swift */; };
 		B6CBE3AC1D4811400029A977 /* BigStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CBE3A71D480FCA0029A977 /* BigStruct.swift */; };
 		B6CBE3AD1D4811410029A977 /* BigStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CBE3A71D480FCA0029A977 /* BigStruct.swift */; };
+		B6EA98031D4A379C00FA5BD2 /* Willow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6EA98021D4A379C00FA5BD2 /* Willow.framework */; };
+		B6EA98051D4A37A300FA5BD2 /* Willow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6EA98041D4A37A300FA5BD2 /* Willow.framework */; };
+		B6EA98071D4A37AD00FA5BD2 /* Willow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6EA98061D4A37AD00FA5BD2 /* Willow.framework */; };
+		B6EA98311D4A3AE400FA5BD2 /* MetalMemory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B4307C81CEF0A2E00A11DA4 /* MetalMemory.framework */; };
+		B6EA98321D4A3AE400FA5BD2 /* MetalMemory.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0B4307C81CEF0A2E00A11DA4 /* MetalMemory.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B6EA98341D4A3AEB00FA5BD2 /* Willow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6EA98021D4A379C00FA5BD2 /* Willow.framework */; };
+		B6EA98351D4A3AEB00FA5BD2 /* Willow.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B6EA98021D4A379C00FA5BD2 /* Willow.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B6EA983A1D4A3DAA00FA5BD2 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EA98391D4A3DAA00FA5BD2 /* Renderer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +98,21 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		B6EA98331D4A3AE500FA5BD2 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B6EA98351D4A3AEB00FA5BD2 /* Willow.framework in Embed Frameworks */,
+				B6EA98321D4A3AE400FA5BD2 /* MetalMemory.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		0B29EFB01CEF215F006DD052 /* Uniform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Uniform.swift; sourceTree = "<group>"; };
 		0B29EFB81CEF21AC006DD052 /* UniformArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniformArray.swift; sourceTree = "<group>"; };
@@ -103,11 +125,11 @@
 		0B4307CC1CEF0A2E00A11DA4 /* Info-OSX.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info-OSX.plist"; path = "MetalMemory/Info-OSX.plist"; sourceTree = SOURCE_ROOT; };
 		0B4307DC1CEF0F1900A11DA4 /* MetalMemory.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MetalMemory.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B4307E01CEF0F1900A11DA4 /* Info-tvOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info-tvOS.plist"; path = "MetalMemory/Info-tvOS.plist"; sourceTree = SOURCE_ROOT; };
-		0B4307F41CEF109B00A11DA4 /* MetalMemoryTests OSX.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MetalMemoryTests OSX.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B4307F41CEF109B00A11DA4 /* MetalMemoryTests-macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MetalMemoryTests-macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B4307F81CEF109B00A11DA4 /* Info-OSX.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = "Info-OSX.plist"; path = "MetalMemoryTests/Info-OSX.plist"; sourceTree = "<group>"; };
-		0B4308031CEF11D900A11DA4 /* MetalMemoryTests iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MetalMemoryTests iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B4308031CEF11D900A11DA4 /* MetalMemoryTests-iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MetalMemoryTests-iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B4308071CEF11D900A11DA4 /* Info-iOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info-iOS.plist"; path = "MetalMemoryTests/Info-iOS.plist"; sourceTree = SOURCE_ROOT; };
-		0B4308131CEF128B00A11DA4 /* MetalMemoryTests tvOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MetalMemoryTests tvOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B4308131CEF128B00A11DA4 /* MetalMemoryTests-tvOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MetalMemoryTests-tvOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B6D3A091CEF925100C719CB /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		0BB204C21CF2F970001909AA /* Playground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Playground.playground; sourceTree = "<group>"; };
 		0BB204C31CF2FF65001909AA /* MetalMemory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalMemory.swift; sourceTree = "<group>"; };
@@ -119,8 +141,7 @@
 		0BCA229F1CF25D970002637A /* GlobalUniform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalUniform.swift; sourceTree = "<group>"; };
 		B6236B721D4945D500C468DD /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6236B741D4945D600C468DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B6236B761D4945D600C468DD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B6236B781D4945D600C468DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B6236B761D4945D600C468DD /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		B6236B7B1D4945D600C468DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B6236B7D1D4945D600C468DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B6236B811D494A1A00C468DD /* shaders.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = shaders.metal; sourceTree = "<group>"; };
@@ -128,6 +149,10 @@
 		B6CBE39F1D480BD40029A977 /* PerfectSize.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PerfectSize.framework; path = Carthage/Build/iOS/PerfectSize.framework; sourceTree = "<group>"; };
 		B6CBE3A11D480BDB0029A977 /* PerfectSize.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PerfectSize.framework; path = Carthage/Build/tvOS/PerfectSize.framework; sourceTree = "<group>"; };
 		B6CBE3A71D480FCA0029A977 /* BigStruct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BigStruct.swift; sourceTree = "<group>"; };
+		B6EA98021D4A379C00FA5BD2 /* Willow.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Willow.framework; path = Carthage/Build/Mac/Willow.framework; sourceTree = "<group>"; };
+		B6EA98041D4A37A300FA5BD2 /* Willow.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Willow.framework; path = Carthage/Build/iOS/Willow.framework; sourceTree = "<group>"; };
+		B6EA98061D4A37AD00FA5BD2 /* Willow.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Willow.framework; path = Carthage/Build/tvOS/Willow.framework; sourceTree = "<group>"; };
+		B6EA98391D4A3DAA00FA5BD2 /* Renderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +160,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6EA98051D4A37A300FA5BD2 /* Willow.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,6 +168,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6EA98031D4A379C00FA5BD2 /* Willow.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,6 +176,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6EA98071D4A37AD00FA5BD2 /* Willow.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,6 +211,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6EA98341D4A3AEB00FA5BD2 /* Willow.framework in Frameworks */,
+				B6EA98311D4A3AE400FA5BD2 /* MetalMemory.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,7 +233,6 @@
 				0BB204C21CF2F970001909AA /* Playground.playground */,
 				0B4307D01CEF0A5200A11DA4 /* Source */,
 				0B4307EF1CEF106300A11DA4 /* Tests */,
-				0B4307D61CEF0ECF00A11DA4 /* Supporting Files */,
 				B6236B731D4945D600C468DD /* Example */,
 				B6CBE3A31D480BE50029A977 /* Frameworks */,
 				0B4307BB1CEF0A2200A11DA4 /* Products */,
@@ -216,9 +245,9 @@
 				0B4307BA1CEF0A2200A11DA4 /* MetalMemory.framework */,
 				0B4307C81CEF0A2E00A11DA4 /* MetalMemory.framework */,
 				0B4307DC1CEF0F1900A11DA4 /* MetalMemory.framework */,
-				0B4307F41CEF109B00A11DA4 /* MetalMemoryTests OSX.xctest */,
-				0B4308031CEF11D900A11DA4 /* MetalMemoryTests iOS.xctest */,
-				0B4308131CEF128B00A11DA4 /* MetalMemoryTests tvOS.xctest */,
+				0B4307F41CEF109B00A11DA4 /* MetalMemoryTests-macOS.xctest */,
+				0B4308031CEF11D900A11DA4 /* MetalMemoryTests-iOS.xctest */,
+				0B4308131CEF128B00A11DA4 /* MetalMemoryTests-tvOS.xctest */,
 				B6236B721D4945D500C468DD /* Example.app */,
 			);
 			name = Products;
@@ -232,6 +261,7 @@
 				0BB204C31CF2FF65001909AA /* MetalMemory.swift */,
 				0BB204CF1CF3186B001909AA /* Data structures */,
 				0B2E98341CFDB9BE00A633A0 /* Utils */,
+				0B4307D61CEF0ECF00A11DA4 /* Supporting Files */,
 			);
 			name = Source;
 			path = MetalMemory;
@@ -247,7 +277,6 @@
 				0B4307F51CEF109B00A11DA4 /* Tests */,
 			);
 			name = "Supporting Files";
-			path = MetalMemory;
 			sourceTree = "<group>";
 		};
 		0B4307EF1CEF106300A11DA4 /* Tests */ = {
@@ -288,9 +317,9 @@
 			isa = PBXGroup;
 			children = (
 				B6236B741D4945D600C468DD /* AppDelegate.swift */,
-				B6236B761D4945D600C468DD /* ViewController.swift */,
+				B6236B761D4945D600C468DD /* View.swift */,
+				B6EA98391D4A3DAA00FA5BD2 /* Renderer.swift */,
 				B6236B811D494A1A00C468DD /* shaders.metal */,
-				B6236B781D4945D600C468DD /* Assets.xcassets */,
 				B6236B7A1D4945D600C468DD /* Main.storyboard */,
 				B6236B7D1D4945D600C468DD /* Info.plist */,
 			);
@@ -300,11 +329,38 @@
 		B6CBE3A31D480BE50029A977 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B6CBE3A11D480BDB0029A977 /* PerfectSize.framework */,
-				B6CBE39F1D480BD40029A977 /* PerfectSize.framework */,
-				B6CBE39D1D480B540029A977 /* PerfectSize.framework */,
+				B6EA98361D4A3B7000FA5BD2 /* tvOS */,
+				B6EA98371D4A3B7A00FA5BD2 /* iOS */,
+				B6EA98381D4A3B8000FA5BD2 /* macOS */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B6EA98361D4A3B7000FA5BD2 /* tvOS */ = {
+			isa = PBXGroup;
+			children = (
+				B6EA98061D4A37AD00FA5BD2 /* Willow.framework */,
+				B6CBE3A11D480BDB0029A977 /* PerfectSize.framework */,
+			);
+			name = tvOS;
+			sourceTree = "<group>";
+		};
+		B6EA98371D4A3B7A00FA5BD2 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				B6EA98041D4A37A300FA5BD2 /* Willow.framework */,
+				B6CBE39F1D480BD40029A977 /* PerfectSize.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		B6EA98381D4A3B8000FA5BD2 /* macOS */ = {
+			isa = PBXGroup;
+			children = (
+				B6EA98021D4A379C00FA5BD2 /* Willow.framework */,
+				B6CBE39D1D480B540029A977 /* PerfectSize.framework */,
+			);
+			name = macOS;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -337,9 +393,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		0B4307B91CEF0A2200A11DA4 /* MetalMemory iOS */ = {
+		0B4307B91CEF0A2200A11DA4 /* MetalMemory-iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0B4307C01CEF0A2200A11DA4 /* Build configuration list for PBXNativeTarget "MetalMemory iOS" */;
+			buildConfigurationList = 0B4307C01CEF0A2200A11DA4 /* Build configuration list for PBXNativeTarget "MetalMemory-iOS" */;
 			buildPhases = (
 				0B4307B51CEF0A2200A11DA4 /* Sources */,
 				0B4307B61CEF0A2200A11DA4 /* Frameworks */,
@@ -350,14 +406,14 @@
 			);
 			dependencies = (
 			);
-			name = "MetalMemory iOS";
+			name = "MetalMemory-iOS";
 			productName = MetalMemoryiOS;
 			productReference = 0B4307BA1CEF0A2200A11DA4 /* MetalMemory.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		0B4307C71CEF0A2E00A11DA4 /* MetalMemory OSX */ = {
+		0B4307C71CEF0A2E00A11DA4 /* MetalMemory-macOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0B4307CD1CEF0A2E00A11DA4 /* Build configuration list for PBXNativeTarget "MetalMemory OSX" */;
+			buildConfigurationList = 0B4307CD1CEF0A2E00A11DA4 /* Build configuration list for PBXNativeTarget "MetalMemory-macOS" */;
 			buildPhases = (
 				0B4307C31CEF0A2E00A11DA4 /* Sources */,
 				0B4307C41CEF0A2E00A11DA4 /* Frameworks */,
@@ -368,14 +424,14 @@
 			);
 			dependencies = (
 			);
-			name = "MetalMemory OSX";
+			name = "MetalMemory-macOS";
 			productName = MetalMemoryOSX;
 			productReference = 0B4307C81CEF0A2E00A11DA4 /* MetalMemory.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		0B4307DB1CEF0F1900A11DA4 /* MetalMemory tvOS */ = {
+		0B4307DB1CEF0F1900A11DA4 /* MetalMemory-tvOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0B4307E11CEF0F1900A11DA4 /* Build configuration list for PBXNativeTarget "MetalMemory tvOS" */;
+			buildConfigurationList = 0B4307E11CEF0F1900A11DA4 /* Build configuration list for PBXNativeTarget "MetalMemory-tvOS" */;
 			buildPhases = (
 				0B4307D71CEF0F1900A11DA4 /* Sources */,
 				0B4307D81CEF0F1900A11DA4 /* Frameworks */,
@@ -386,14 +442,14 @@
 			);
 			dependencies = (
 			);
-			name = "MetalMemory tvOS";
+			name = "MetalMemory-tvOS";
 			productName = MetalMemorytvOS;
 			productReference = 0B4307DC1CEF0F1900A11DA4 /* MetalMemory.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		0B4307F31CEF109B00A11DA4 /* MetalMemoryTests OSX */ = {
+		0B4307F31CEF109B00A11DA4 /* MetalMemoryTests-macOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0B4307FC1CEF109B00A11DA4 /* Build configuration list for PBXNativeTarget "MetalMemoryTests OSX" */;
+			buildConfigurationList = 0B4307FC1CEF109B00A11DA4 /* Build configuration list for PBXNativeTarget "MetalMemoryTests-macOS" */;
 			buildPhases = (
 				0B4307F01CEF109B00A11DA4 /* Sources */,
 				0B4307F11CEF109B00A11DA4 /* Frameworks */,
@@ -404,14 +460,14 @@
 			dependencies = (
 				0B4307FB1CEF109B00A11DA4 /* PBXTargetDependency */,
 			);
-			name = "MetalMemoryTests OSX";
+			name = "MetalMemoryTests-macOS";
 			productName = "MetalMemoryTests OSX";
-			productReference = 0B4307F41CEF109B00A11DA4 /* MetalMemoryTests OSX.xctest */;
+			productReference = 0B4307F41CEF109B00A11DA4 /* MetalMemoryTests-macOS.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		0B4308021CEF11D900A11DA4 /* MetalMemoryTests iOS */ = {
+		0B4308021CEF11D900A11DA4 /* MetalMemoryTests-iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0B43080B1CEF11D900A11DA4 /* Build configuration list for PBXNativeTarget "MetalMemoryTests iOS" */;
+			buildConfigurationList = 0B43080B1CEF11D900A11DA4 /* Build configuration list for PBXNativeTarget "MetalMemoryTests-iOS" */;
 			buildPhases = (
 				0B4307FF1CEF11D900A11DA4 /* Sources */,
 				0B4308001CEF11D900A11DA4 /* Frameworks */,
@@ -422,14 +478,14 @@
 			dependencies = (
 				0B43080A1CEF11D900A11DA4 /* PBXTargetDependency */,
 			);
-			name = "MetalMemoryTests iOS";
+			name = "MetalMemoryTests-iOS";
 			productName = "MetalMemoryTests iOS";
-			productReference = 0B4308031CEF11D900A11DA4 /* MetalMemoryTests iOS.xctest */;
+			productReference = 0B4308031CEF11D900A11DA4 /* MetalMemoryTests-iOS.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		0B4308121CEF128B00A11DA4 /* MetalMemoryTests tvOS */ = {
+		0B4308121CEF128B00A11DA4 /* MetalMemoryTests-tvOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0B43081B1CEF128B00A11DA4 /* Build configuration list for PBXNativeTarget "MetalMemoryTests tvOS" */;
+			buildConfigurationList = 0B43081B1CEF128B00A11DA4 /* Build configuration list for PBXNativeTarget "MetalMemoryTests-tvOS" */;
 			buildPhases = (
 				0B43080F1CEF128B00A11DA4 /* Sources */,
 				0B4308101CEF128B00A11DA4 /* Frameworks */,
@@ -440,9 +496,9 @@
 			dependencies = (
 				0B43081A1CEF128B00A11DA4 /* PBXTargetDependency */,
 			);
-			name = "MetalMemoryTests tvOS";
+			name = "MetalMemoryTests-tvOS";
 			productName = "MetalMemoryTests tvOS";
-			productReference = 0B4308131CEF128B00A11DA4 /* MetalMemoryTests tvOS.xctest */;
+			productReference = 0B4308131CEF128B00A11DA4 /* MetalMemoryTests-tvOS.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		B6236B711D4945D500C468DD /* Example */ = {
@@ -452,6 +508,7 @@
 				B6236B6E1D4945D500C468DD /* Sources */,
 				B6236B6F1D4945D500C468DD /* Frameworks */,
 				B6236B701D4945D500C468DD /* Resources */,
+				B6EA98331D4A3AE500FA5BD2 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -508,12 +565,12 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0B4307C71CEF0A2E00A11DA4 /* MetalMemory OSX */,
-				0B4307B91CEF0A2200A11DA4 /* MetalMemory iOS */,
-				0B4307DB1CEF0F1900A11DA4 /* MetalMemory tvOS */,
-				0B4307F31CEF109B00A11DA4 /* MetalMemoryTests OSX */,
-				0B4308021CEF11D900A11DA4 /* MetalMemoryTests iOS */,
-				0B4308121CEF128B00A11DA4 /* MetalMemoryTests tvOS */,
+				0B4307C71CEF0A2E00A11DA4 /* MetalMemory-macOS */,
+				0B4307B91CEF0A2200A11DA4 /* MetalMemory-iOS */,
+				0B4307DB1CEF0F1900A11DA4 /* MetalMemory-tvOS */,
+				0B4307F31CEF109B00A11DA4 /* MetalMemoryTests-macOS */,
+				0B4308021CEF11D900A11DA4 /* MetalMemoryTests-iOS */,
+				0B4308121CEF128B00A11DA4 /* MetalMemoryTests-tvOS */,
 				B6236B711D4945D500C468DD /* Example */,
 			);
 		};
@@ -567,7 +624,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B6236B791D4945D600C468DD /* Assets.xcassets in Resources */,
 				B6236B7C1D4945D600C468DD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -657,7 +713,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B6236B771D4945D600C468DD /* ViewController.swift in Sources */,
+				B6EA983A1D4A3DAA00FA5BD2 /* Renderer.swift in Sources */,
+				B6236B771D4945D600C468DD /* View.swift in Sources */,
 				B6236B751D4945D600C468DD /* AppDelegate.swift in Sources */,
 				B6236B821D494A1A00C468DD /* shaders.metal in Sources */,
 			);
@@ -668,22 +725,22 @@
 /* Begin PBXTargetDependency section */
 		0B4307FB1CEF109B00A11DA4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 0B4307C71CEF0A2E00A11DA4 /* MetalMemory OSX */;
+			target = 0B4307C71CEF0A2E00A11DA4 /* MetalMemory-macOS */;
 			targetProxy = 0B4307FA1CEF109B00A11DA4 /* PBXContainerItemProxy */;
 		};
 		0B43080A1CEF11D900A11DA4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 0B4307B91CEF0A2200A11DA4 /* MetalMemory iOS */;
+			target = 0B4307B91CEF0A2200A11DA4 /* MetalMemory-iOS */;
 			targetProxy = 0B4308091CEF11D900A11DA4 /* PBXContainerItemProxy */;
 		};
 		0B43081A1CEF128B00A11DA4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 0B4307DB1CEF0F1900A11DA4 /* MetalMemory tvOS */;
+			target = 0B4307DB1CEF0F1900A11DA4 /* MetalMemory-tvOS */;
 			targetProxy = 0B4308191CEF128B00A11DA4 /* PBXContainerItemProxy */;
 		};
 		B6CA4FE71D495B4B005280A4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 0B4307C71CEF0A2E00A11DA4 /* MetalMemory OSX */;
+			target = 0B4307C71CEF0A2E00A11DA4 /* MetalMemory-macOS */;
 			targetProxy = B6CA4FE61D495B4B005280A4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -1383,8 +1440,13 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -1434,8 +1496,13 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -1466,7 +1533,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0B4307C01CEF0A2200A11DA4 /* Build configuration list for PBXNativeTarget "MetalMemory iOS" */ = {
+		0B4307C01CEF0A2200A11DA4 /* Build configuration list for PBXNativeTarget "MetalMemory-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0B4307C11CEF0A2200A11DA4 /* Debug */,
@@ -1475,7 +1542,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0B4307CD1CEF0A2E00A11DA4 /* Build configuration list for PBXNativeTarget "MetalMemory OSX" */ = {
+		0B4307CD1CEF0A2E00A11DA4 /* Build configuration list for PBXNativeTarget "MetalMemory-macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0B4307CE1CEF0A2E00A11DA4 /* Debug */,
@@ -1484,7 +1551,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0B4307E11CEF0F1900A11DA4 /* Build configuration list for PBXNativeTarget "MetalMemory tvOS" */ = {
+		0B4307E11CEF0F1900A11DA4 /* Build configuration list for PBXNativeTarget "MetalMemory-tvOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0B4307E21CEF0F1900A11DA4 /* Debug */,
@@ -1493,7 +1560,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0B4307FC1CEF109B00A11DA4 /* Build configuration list for PBXNativeTarget "MetalMemoryTests OSX" */ = {
+		0B4307FC1CEF109B00A11DA4 /* Build configuration list for PBXNativeTarget "MetalMemoryTests-macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0B4307FD1CEF109B00A11DA4 /* Debug */,
@@ -1502,7 +1569,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0B43080B1CEF11D900A11DA4 /* Build configuration list for PBXNativeTarget "MetalMemoryTests iOS" */ = {
+		0B43080B1CEF11D900A11DA4 /* Build configuration list for PBXNativeTarget "MetalMemoryTests-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0B43080C1CEF11D900A11DA4 /* Debug */,
@@ -1511,7 +1578,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0B43081B1CEF128B00A11DA4 /* Build configuration list for PBXNativeTarget "MetalMemoryTests tvOS" */ = {
+		0B43081B1CEF128B00A11DA4 /* Build configuration list for PBXNativeTarget "MetalMemoryTests-tvOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0B43081C1CEF128B00A11DA4 /* Debug */,

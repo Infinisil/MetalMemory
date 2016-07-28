@@ -9,25 +9,11 @@
 #include <metal_stdlib>
 using namespace metal;
 
-struct Particle {
-	float x;
-	float y;
-};
-
-struct Point {
-	float4 position [[ position ]];
-	float size [[ point_size ]];
-};
-
-vertex Point basicVertex(const device Particle *particles [[ buffer(0) ]],
-					uint i [[ vertex_id ]]) {
-	Point point;
-	point.position = float4(particles[i].x * 2 - 1, particles[i].y * 2 - 1, 0.5, 1);
-	point.size = 1;
-	
-	return point;
+vertex float4 basicVertex(const device float2 *particles [[ buffer(0) ]],
+						  uint i [[ vertex_id ]]) {
+	return float4(particles[i].x, particles[i].y, 0, 1);
 }
 
-fragment float4 basicFragment(Point point [[ stage_in ]]) {
+fragment float4 basicFragment() {
 	return 1;
 }

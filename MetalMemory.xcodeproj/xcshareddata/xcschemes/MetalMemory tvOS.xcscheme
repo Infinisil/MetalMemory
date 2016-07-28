@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "0B4307DB1CEF0F1900A11DA4"
                BuildableName = "MetalMemory.framework"
-               BlueprintName = "MetalMemory tvOS"
+               BlueprintName = "MetalMemory-tvOS"
                ReferencedContainer = "container:MetalMemory.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -33,8 +33,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "0B4308121CEF128B00A11DA4"
-               BuildableName = "MetalMemoryTests tvOS.xctest"
-               BlueprintName = "MetalMemoryTests tvOS"
+               BuildableName = "MetalMemoryTests-tvOS.xctest"
+               BlueprintName = "MetalMemoryTests-tvOS"
                ReferencedContainer = "container:MetalMemory.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -44,7 +44,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0B4307DB1CEF0F1900A11DA4"
             BuildableName = "MetalMemory.framework"
-            BlueprintName = "MetalMemory tvOS"
+            BlueprintName = "MetalMemory-tvOS"
             ReferencedContainer = "container:MetalMemory.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -66,7 +66,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0B4307DB1CEF0F1900A11DA4"
             BuildableName = "MetalMemory.framework"
-            BlueprintName = "MetalMemory tvOS"
+            BlueprintName = "MetalMemory-tvOS"
             ReferencedContainer = "container:MetalMemory.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -84,7 +84,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0B4307DB1CEF0F1900A11DA4"
             BuildableName = "MetalMemory.framework"
-            BlueprintName = "MetalMemory tvOS"
+            BlueprintName = "MetalMemory-tvOS"
             ReferencedContainer = "container:MetalMemory.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

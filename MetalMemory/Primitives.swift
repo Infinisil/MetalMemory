@@ -39,6 +39,8 @@ final class PageMemory {
 		didSet {
 			NSCopyMemoryPages(oldValue.pointer, mem.pointer, min(oldValue.bytes, mem.bytes))
 			movedCallbacks.forEach { $0(pointer: mem.pointer, bytes: mem.bytes) }
+			log.debug{ [old = oldValue.bytes, new = mem.bytes] in
+				"Allocated more memory and copied previous memory into it. Previous bytes: \(old), new bytes: \(new)"}
 		}
 	}
 	
