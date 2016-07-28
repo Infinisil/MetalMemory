@@ -7,7 +7,6 @@
 //
 
 import XCTest
-import Metal
 @testable import MetalMemory
 
 class UniformArrayTests: XCTestCase {
