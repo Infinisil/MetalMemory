@@ -64,12 +64,17 @@ class Renderer : NSObject, MTKViewDelegate {
 		view.device = device
 		points.device = device
 		
+		let samples = 4
+		view.sampleCount = samples
+		
 		library = device.newDefaultLibrary()!
 		queue = device.newCommandQueue()
 		
 		let pipeDesc = MTLRenderPipelineDescriptor()
 		pipeDesc.vertexFunction = library.newFunctionWithName("basicVertex")!
 		pipeDesc.fragmentFunction = library.newFunctionWithName("basicFragment")!
+		
+		pipeDesc.sampleCount = samples
 		
 		pipeDesc.colorAttachments[0].pixelFormat = view.colorPixelFormat
 		
