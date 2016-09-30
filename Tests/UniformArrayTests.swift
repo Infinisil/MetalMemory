@@ -30,7 +30,7 @@ class UniformArrayTests: XCTestCase {
 		
 		XCTAssert(array.count == 1000)
 		
-		for (i, v) in array.enumerate() {
+		for (i, v) in array.enumerated() {
 			XCTAssertEqual(i, v)
 		}
 	}
@@ -43,7 +43,7 @@ class UniformArrayTests: XCTestCase {
 			XCTAssertEqual(array[i], i)
 		}
 		
-		array.replaceRange(5000..<10000, with: [Int](count: 100, repeatedValue: 2000))
+		array.replaceSubrange(5000..<10000, with: [Int](repeating: 2000, count: 100))
 		
 		for i in array.indices {
 			if i < 5000 {
@@ -60,7 +60,7 @@ class UniformArrayTests: XCTestCase {
 		let array = UniformArray<Int>()
 		array.reserveCapacity(count)
 		
-		XCTAssertGreaterThan(array.memory.mem.bytes, strideof(Int) * count)
+		XCTAssertGreaterThan(array.memory.mem.bytes, MemoryLayout<Int>.stride * count)
 	}
 	
 	func testRepeatedValue() {

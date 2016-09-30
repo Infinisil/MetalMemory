@@ -11,32 +11,32 @@ import Foundation
 
 /// A policy for allocating/deallocating memory.
 public struct Policy {
-	enum Rounding {
+	public enum Rounding {
 		
 		/// Multiple of page-size, recommended on small amounts of memory
-		case PageMultiple
+		case pageMultiple
 		
 		/// Powers of 2, recommended on big amounts of memory, or memory that's changing a lot
-		case PowerOfTwo
+		case powerOfTwo
 		
 		/// Returns the amount of bytes needed for this Rounding policy. The result is a multiple of page-size
-		func bytesNeeded(minBytes: Int) -> Int {
+		func bytesNeeded(_ minBytes: Int) -> Int {
 			let pageBytes = NSRoundUpToMultipleOfPageSize(minBytes)
 			switch self {
-			case .PageMultiple: return pageBytes
-			case .PowerOfTwo: return roundUpToPowerOf2(pageBytes)
+			case .pageMultiple: return pageBytes
+			case .powerOfTwo: return roundUpToPowerOf2(pageBytes)
 			}
 		}
 	}
 	
 	/// A policy for rounding
-	let rounding: Rounding
+	public let rounding: Rounding
 	
 	/// A policy for deallocating
-	let decrease : Bool
+	public let decrease : Bool
 	
-	init(size: Rounding, decrease: Bool) {
-		self.rounding = size
+	public init(rounding: Rounding, decrease: Bool) {
+		self.rounding = rounding
 		self.decrease = decrease
 	}
 	

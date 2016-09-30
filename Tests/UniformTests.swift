@@ -9,6 +9,26 @@
 import XCTest
 import PerfectSize
 @testable import MetalMemory
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
+}
+
+fileprivate func >= <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l >= r
+  default:
+    return !(lhs < rhs)
+  }
+}
+
 
 class UniformTests: XCTestCase {
 	let value = 1
@@ -77,10 +97,10 @@ class UniformTests: XCTestCase {
 		let buffer = uniform.buffer
 		XCTAssert(buffer.device === device)
 		
-		let pointer = UnsafeMutablePointer<Int>(buffer.contents())
-		XCTAssertEqual(pointer.memory, value)
+		let pointer = buffer.contents().bindMemory(to: Int.self, capacity: 1)
+		XCTAssertEqual(pointer.pointee, value)
 		
-		XCTAssert(buffer.length >= sizeofValue(Int))
+		XCTAssert(buffer.length >= MemoryLayout<Int>.size)
 	}
 	
 	func testDealloc() {
@@ -88,29 +108,29 @@ class UniformTests: XCTestCase {
 	}
 	
 	func testBigStructs() {
-		func test<T>(t: T.Type) {
+		func test<T>(_ t: T.Type) {
 			var u : Uniform<T>? = Uniform()
 			u?.device = device
-			XCTAssert(u?.buffer.length >= sizeof(T))
+			XCTAssert(u?.buffer.length >= MemoryLayout<T>.size)
 			u = nil
 		}
 		
 		
-		test(Page)
-		test(PagePlus1) // One more byte
-		test(PageTimes8) // 8 times page size
-		test(PageTimes8Plus1) // One more byte
+		test(Page.self)
+		test(PagePlus1.self) // One more byte
+		test(PageTimes8.self) // 8 times page size
+		test(PageTimes8Plus1.self) // One more byte
 		
-		test(TenThousand) // 10_000 byte struct
+		test(TenThousand.self) // 10_000 byte struct
 	}
 }
 
 extension XCTestCase {
-	final class FatalThread : NSThread {
+	final class FatalThread : Thread {
 		let c : () -> ()
 		let message : String
 		
-		init(c: () -> (), message: String = "") {
+		init(c: @escaping () -> (), message: String = "") {
 			self.c = c
 			self.message = message
 			super.init()
@@ -122,16 +142,16 @@ extension XCTestCase {
 		}
 	}
 	
-	func assertFatal<R>(message message: String = "Method didn't fatal", timeout: NSTimeInterval = 1, c: () -> R) {
+	func assertFatal<R>(message: String = "Method didn't fatal", timeout: TimeInterval = 1, c: @escaping () -> R) {
 		expectedFatal = true
 		
 		let thread = FatalThread(c: { _ = c() }, message: message)
 		
-		expectationForNotification(NSThreadWillExitNotification, object: thread, handler: nil)
+		expectation(forNotification: NSNotification.Name.NSThreadWillExit.rawValue, object: thread, handler: nil)
 		
 		thread.start()
 		
-		waitForExpectationsWithTimeout(timeout) { error in
+		waitForExpectations(timeout: timeout) { error in
 			expectedFatal = false
 		}
 	}

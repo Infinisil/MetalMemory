@@ -15,12 +15,12 @@ didSet {
 }
 }
 
-private func updateBuffer(pointer: UnsafeMutablePointer<Void>, bytes: Int) {
-	globalBuffer = globalUniformDevice?.newBufferWithBytesNoCopy(pointer, length: bytes, options: [.CPUCacheModeDefaultCache, .StorageModeShared], deallocator: nil)
+private func updateBuffer(_ pointer: UnsafeMutableRawPointer, bytes: Int) {
+	globalBuffer = globalUniformDevice?.makeBuffer(bytesNoCopy: pointer, length: bytes, options: MTLResourceOptions(), deallocator: nil)
 	globalBuffer?.label = "globalBuffer"
 }
 
-private let globalMemory = PageMemory(bytes: 0, policy: Policy(size: .PageMultiple, decrease: false), movedCallbacks: updateBuffer)
+private let globalMemory = PageMemory(bytes: 0, policy: Policy(rounding: .pageMultiple, decrease: false), movedCallbacks: updateBuffer)
 private var globalOffset : Int = 0
 
 
@@ -58,14 +58,14 @@ public final class GlobalUniform<T> : MetalMemory, CustomStringConvertible {
 	}
 	
 	public init() {
-		globalMemory.bytes += sizeof(T)
+		globalMemory.bytes += MemoryLayout<T>.size
 		offset = globalOffset
-		globalOffset += sizeof(T)
-		pointer = UnsafeMutablePointer(globalMemory.mem.pointer.advancedBy(offset))
+		globalOffset += MemoryLayout<T>.size
+		pointer = globalMemory.mem.pointer.advanced(by: offset).bindMemory(to: T.self, capacity: 1)
 		
 		globalMemory.movedCallbacks.append { [weak self] pointer, bytes in
 			if let s = self {
-				s.pointer = UnsafeMutablePointer(globalMemory.mem.pointer.advancedBy(s.offset))
+				s.pointer = globalMemory.mem.pointer.advanced(by: s.offset).bindMemory(to: T.self, capacity: 1)
 			}
 		}
 	}
@@ -75,14 +75,14 @@ public final class GlobalUniform<T> : MetalMemory, CustomStringConvertible {
 		self.value = value
 	}
 	
-	private var pointer : UnsafeMutablePointer<T>
+	fileprivate var pointer : UnsafeMutablePointer<T>
 	
 	public var value : T {
 		@inline(__always) get {
-			return pointer.memory
+			return pointer.pointee
 		}
 		@inline(__always) set {
-			pointer.memory = newValue
+			pointer.pointee = newValue
 		}
 	}
 }

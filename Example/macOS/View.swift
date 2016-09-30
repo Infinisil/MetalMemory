@@ -22,15 +22,15 @@ class DrawingView : MTKView {
 	var renderer : Renderer?
 	
 	func normalizedPoint(forEvent event: NSEvent) -> float2 {
-		let point = convertPoint(event.locationInWindow, fromView: window?.contentView)
+		let point = convert(event.locationInWindow, from: window?.contentView)
 		return float2(Float(point.x / frame.width), Float(point.y / frame.height)) * 2 - float2(1)
 	}
 	
-	override func mouseDown(theEvent: NSEvent) {
+	override func mouseDown(with theEvent: NSEvent) {
 		renderer?.startLine(atPoint: normalizedPoint(forEvent: theEvent))
 	}
 	
-	override func mouseDragged(theEvent: NSEvent) {
-		renderer?.appendToLastLine(point: normalizedPoint(forEvent: theEvent))
+	override func mouseDragged(with theEvent: NSEvent) {
+		renderer?.appendToLastLine(normalizedPoint(forEvent: theEvent))
 	}
 }

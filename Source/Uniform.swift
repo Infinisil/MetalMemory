@@ -8,7 +8,7 @@
 
 import Metal
 
-private let resourceOptions : MTLResourceOptions = [.StorageModeShared, .CPUCacheModeDefaultCache]
+private let resourceOptions : MTLResourceOptions = MTLResourceOptions()
 
 /**
 Acts as a cheap view onto a MTLBuffer as a single item of type T.
@@ -36,7 +36,7 @@ public final class Uniform<T> : MetalMemory {
 			return _metalBuffer?.device
 		}
 		set {
-			_metalBuffer = newValue?.newBufferWithBytesNoCopy(pointer, length: constMemory.bytes, options: resourceOptions, deallocator: nil)
+			_metalBuffer = newValue?.makeBuffer(bytesNoCopy: pointer, length: constMemory.bytes, options: resourceOptions, deallocator: nil)
 			_metalBuffer?.label = label
 		}
 	}
@@ -56,13 +56,13 @@ public final class Uniform<T> : MetalMemory {
 	public var offset : Int { return 0 }
 	
 	/// Used to store the actual buffer (if `device` is set)
-	private var _metalBuffer : MTLBuffer?
+	fileprivate var _metalBuffer : MTLBuffer?
 	
 	/// The actual memory
-	private let constMemory : ConstPageMemory
+	fileprivate let constMemory : ConstPageMemory
 	
 	/// The pointer to the start of the memory, equivalent to `constMemory.pointer`
-	private var pointer : UnsafeMutablePointer<T>
+	fileprivate var pointer : UnsafeMutablePointer<T>
 	
 	
 	/// A label for giving this Uniform a meaningful name for debugging purposes. The `buffer` property will have the same label.
@@ -75,8 +75,8 @@ public final class Uniform<T> : MetalMemory {
 
 	/// Create a new Uniform with no device set and memory initialized to zero.
 	public init() {
-		constMemory = ConstPageMemory(bytes: sizeof(T))
-		pointer = UnsafeMutablePointer(constMemory.pointer)
+		constMemory = ConstPageMemory(bytes: MemoryLayout<T>.size)
+		pointer = constMemory.pointer.bindMemory(to: T.self, capacity: 1)
 	}
 	
 	/// Create a new Uniform with no device set and memory initialized to `value`.
@@ -101,10 +101,10 @@ public final class Uniform<T> : MetalMemory {
 	/// The value of the memory. Calls to this getter/setter are always inlined and have therefore no performance overhead.
 	public var value : T {
 		@inline(__always) get {
-			return pointer.memory
+			return pointer.pointee
 		}
 		@inline(__always) set {
-			pointer.memory = newValue
+			pointer.pointee = newValue
 		}
 	}
 }

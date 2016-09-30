@@ -12,7 +12,7 @@ import Foundation
 	Manages the basic allocation/deallocation of page aligned memory
 */
 final class ConstPageMemory {
-	let pointer : UnsafeMutablePointer<Void>
+	let pointer : UnsafeMutableRawPointer
 	let bytes : Int
 	
 	init(bytes: Int) {
@@ -30,7 +30,7 @@ final class ConstPageMemory {
 	Manages variable sized page-aligned memory. Upon size change it may allocate new memory (depending on the policy) and when it does, the old contents get copied over and the `movedCallback` is called with the new pointer and size in bytes.
 */
 final class PageMemory {
-	typealias MovedCallback = (pointer: UnsafeMutablePointer<Void>, bytes: Int) -> Void
+	typealias MovedCallback = (_ pointer: UnsafeMutableRawPointer, _ bytes: Int) -> Void
 	
 	var policy : Policy
 	var movedCallbacks : [MovedCallback] = []
@@ -38,7 +38,7 @@ final class PageMemory {
 	var mem : ConstPageMemory {
 		didSet {
 			NSCopyMemoryPages(oldValue.pointer, mem.pointer, min(oldValue.bytes, mem.bytes))
-			movedCallbacks.forEach { $0(pointer: mem.pointer, bytes: mem.bytes) }
+			movedCallbacks.forEach { $0(mem.pointer, mem.bytes) }
 			log.debug{ [old = oldValue.bytes, new = mem.bytes] in
 				"Allocated more memory and copied previous memory into it. Previous bytes: \(old), new bytes: \(new)"}
 		}
@@ -54,7 +54,7 @@ final class PageMemory {
 	}
 	
 	init(bytes: Int, policy: Policy, movedCallbacks: MovedCallback...) {
-		self.movedCallbacks = movedCallbacks
+		self.movedCallbacks = movedCallbacks as! [PageMemory.MovedCallback]
 		self.policy = policy
 		self.bytes = bytes
 		let bytesNeeded = policy.bytesNeeded(oldBytes: 0, newBytes: bytes)

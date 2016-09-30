@@ -33,7 +33,7 @@ class GlobalUniformTests : XCTestCase {
 		let a = GlobalUniform<TenThousand>()
 		
 		globalUniformDevice = device
-		XCTAssert(a.buffer.length > sizeof(TenThousand) + 1)
+		XCTAssert(a.buffer.length > MemoryLayout<TenThousand>.size + 1)
 	}
 	
 	func testA() {

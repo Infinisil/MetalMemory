@@ -9,13 +9,13 @@
 import Metal
 
 
-private let resourceOptions : MTLResourceOptions = [.StorageModeShared, .CPUCacheModeDefaultCache]
-private let defaultAllocationPolicy = Policy(size: .PowerOfTwo, decrease: true)
+private let resourceOptions : MTLResourceOptions = MTLResourceOptions()
+private let defaultAllocationPolicy = Policy(rounding: .powerOfTwo, decrease: true)
 
 final public class UniformArray<T> : MetalMemory {
 	var memory : PageMemory
 	
-	private let policy : Policy
+	fileprivate let policy : Policy
 	
 	public var device : MTLDevice? {
 		didSet {
@@ -23,8 +23,8 @@ final public class UniformArray<T> : MetalMemory {
 		}
 	}
 	
-	private func update(pointer: UnsafeMutablePointer<Void>, bytes: Int) {
-		_metalBuffer = device?.newBufferWithBytesNoCopy(pointer, length: bytes, options: resourceOptions, deallocator: nil)
+	fileprivate func update(_ pointer: UnsafeMutableRawPointer, bytes: Int) {
+		_metalBuffer = device?.makeBuffer(bytesNoCopy: pointer, length: bytes, options: resourceOptions, deallocator: nil)
 		_metalBuffer?.label = label
 	}
 	
@@ -44,10 +44,10 @@ final public class UniformArray<T> : MetalMemory {
 	
 	public var offset : Int { return 0 }
 	
-	private var _metalBuffer : MTLBuffer?
+	fileprivate var _metalBuffer : MTLBuffer?
 	
 	var pointer : UnsafeMutablePointer<T> {
-		return UnsafeMutablePointer(memory.mem.pointer)
+		return memory.mem.pointer.bindMemory(to: T.self, capacity: count)
 	}
 	
 	var bufferPointer : UnsafeMutableBufferPointer<T> {
@@ -60,8 +60,8 @@ final public class UniformArray<T> : MetalMemory {
 		}
 	}
 	
-	static func getBytesNeeded(count: Int) -> Int {
-		return max(1, count) * strideof(T)
+	static func getBytesNeeded(_ count: Int) -> Int {
+		return Swift.max(1, count) * MemoryLayout<T>.stride
 	}
 	
 	public init(count: Int, policy: Policy = defaultAllocationPolicy) {
@@ -76,12 +76,16 @@ final public class UniformArray<T> : MetalMemory {
 	}
 }
 
-extension UniformArray : CollectionType {
+extension UniformArray : Collection {
+	public func index(after i: Int) -> Int {
+		return i + 1
+	}
+
 	public var startIndex : Int { return 0 }
 	public var endIndex : Int { return count }
 	
-	public func generate() -> UnsafeBufferPointerGenerator<T> {
-		return bufferPointer.generate()
+	public func makeIterator() -> UnsafeBufferPointerIterator<T> {
+		return bufferPointer.makeIterator()
 	}
 	
 	public subscript (position : Int) -> T {
@@ -94,26 +98,26 @@ extension UniformArray : CollectionType {
 	}
 }
 
-extension UniformArray : RangeReplaceableCollectionType {
+extension UniformArray : RangeReplaceableCollection {
 	
 	convenience public init() {
 		self.init(count: 0)
 	}
 	
-	public func reserveCapacity(n: Int) {
-		memory.bytes = max(memory.bytes, n * strideof(T))
+	public func reserveCapacity(_ n: Int) {
+		memory.bytes = Swift.max(memory.bytes, n * MemoryLayout<T>.stride)
 	}
 	
-	private var free : Int {
-		return (memory.bytes - count * strideof(T)) / strideof(T)
+	fileprivate var free : Int {
+		return (memory.bytes - count * MemoryLayout<T>.stride) / MemoryLayout<T>.stride
 	}
 	
-	public func append(newElement: T) {
+	public func append(_ newElement: T) {
 		count += 1
 		self[endIndex - 1] = newElement
 	}
 	
-	public func replaceRange<C : CollectionType where C.Generator.Element == T>(subRange: Range<Int>, with newElements: C) {
+	public func replaceSubrange<C : Collection>(_ subRange: Range<Int>, with newElements: C) where C.Iterator.Element == T {
 		let ccount = Int(newElements.count.toIntMax())
 		let dif = ccount - subRange.count
 		
@@ -123,16 +127,16 @@ extension UniformArray : RangeReplaceableCollectionType {
 		}
 		
 		// Optionally move memory behind the replacement
-		if subRange.endIndex != count {
-			let dest = pointer.advancedBy(subRange.startIndex).advancedBy(ccount)
-			let orig = pointer.advancedBy(subRange.endIndex)
-			let n = dest.distanceTo(pointer.advancedBy(count)) * strideof(T)
+		if subRange.upperBound != count {
+			let dest = pointer.advanced(by: subRange.lowerBound).advanced(by: ccount)
+			let orig = pointer.advanced(by: subRange.upperBound)
+			let n = dest.distance(to: pointer.advanced(by: count)) * MemoryLayout<T>.stride
 			
 			memmove(dest, orig, n)
 		}
 		
 		// Copy new elements from given collection
-		var index = subRange.startIndex
+		var index = subRange.lowerBound
 		for elem in newElements {
 			pointer[index] = elem
 			index += 1
@@ -141,8 +145,8 @@ extension UniformArray : RangeReplaceableCollectionType {
 		count += dif
 	}
 	
-	public func appendContentsOf<S : CollectionType where S.Generator.Element == T>(newElements: S) {
-		replaceRange(endIndex..<endIndex, with: newElements)
+	public func appendContentsOf<S : Collection>(_ newElements: S) where S.Iterator.Element == T {
+		replaceSubrange(endIndex..<endIndex, with: newElements)
 	}
 }
 
@@ -150,7 +154,7 @@ public extension UniformArray {
 	convenience init(count: Int, repeatedValue: T) {
 		self.init()
 		self.count = count
-		memory.bytes = count * strideof(T)
+		memory.bytes = count * MemoryLayout<T>.stride
 		for i in indices {
 			self[i] = repeatedValue
 		}
