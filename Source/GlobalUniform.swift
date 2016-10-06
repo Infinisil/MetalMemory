@@ -20,7 +20,7 @@ private func updateBuffer(_ pointer: UnsafeMutableRawPointer, bytes: Int) {
 	globalBuffer?.label = "globalBuffer"
 }
 
-private let globalMemory = PageMemory(bytes: 0, policy: Policy(rounding: .pageMultiple, decrease: false), movedCallbacks: updateBuffer)
+private let globalMemory = PageMemory(bytes: 0, policy: Policy(rounding: .pageMultiple, decrease: false), movedCallbacks: [updateBuffer])
 private var globalOffset : Int = 0
 
 
@@ -47,7 +47,7 @@ public final class GlobalUniform<T> : MetalMemory, CustomStringConvertible {
 		if let buffer = globalBuffer {
 			return buffer
 		} else {
-			fatalError("MTLDevice not provided and therefore no MTLBuffer available. Set the `globalUniformDevice` variable to prevent this.")
+			fatalError("MTLDevice not provided and therefore no MTLBuffer available. Set the `globalUniformDevice` global variable to prevent this.")
 		}
 	}
 	

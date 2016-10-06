@@ -53,8 +53,8 @@ final class PageMemory {
 		}
 	}
 	
-	init(bytes: Int, policy: Policy, movedCallbacks: MovedCallback...) {
-		self.movedCallbacks = movedCallbacks as! [PageMemory.MovedCallback]
+	init(bytes: Int, policy: Policy, movedCallbacks: [MovedCallback] = []) {
+		self.movedCallbacks = movedCallbacks
 		self.policy = policy
 		self.bytes = bytes
 		let bytesNeeded = policy.bytesNeeded(oldBytes: 0, newBytes: bytes)
