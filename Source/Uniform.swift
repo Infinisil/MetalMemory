@@ -36,7 +36,11 @@ public final class Uniform<T> : MetalMemory {
 			return _metalBuffer?.device
 		}
 		set {
-			_metalBuffer = newValue?.makeBuffer(bytesNoCopy: pointer, length: constMemory.bytes, options: resourceOptions, deallocator: nil)
+			_metalBuffer = newValue?.makeBuffer(
+				bytesNoCopy: pointer,
+				length: constMemory.bytes,
+				options: resourceOptions,
+				deallocator: nil)
 			_metalBuffer?.label = label
 		}
 	}

@@ -18,6 +18,17 @@ class UniformArrayTests: XCTestCase {
 		}
 	}()
 	
+	let pageSize = NSPageSize()
+	
+	func testInit() {
+		let a = UniformArray<Int>()
+		XCTAssert(a.memory.bytes == 0)
+		XCTAssert(a.device == nil)
+		
+		let b = UniformArray<Void>()
+		
+	}
+	
 	func testTest() {
 		let array = UniformArray<Int>()
 		XCTAssertEqual(array.count, 0)

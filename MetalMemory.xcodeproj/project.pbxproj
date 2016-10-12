@@ -46,6 +46,9 @@
 		B67718F31D4A9E21000D4634 /* MetalMemory.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0B4307BA1CEF0A2200A11DA4 /* MetalMemory.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B67718F51D4A9E27000D4634 /* Willow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6EA98041D4A37A300FA5BD2 /* Willow.framework */; };
 		B67718F61D4A9E27000D4634 /* Willow.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B6EA98041D4A37A300FA5BD2 /* Willow.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B69313A01DAE5FE8009C9AB2 /* PrimitivesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B693139F1DAE5FE8009C9AB2 /* PrimitivesTests.swift */; };
+		B69313A21DAE6611009C9AB2 /* PolicyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69313A11DAE6611009C9AB2 /* PolicyTests.swift */; };
+		B69313A41DAE7217009C9AB2 /* UtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69313A31DAE7217009C9AB2 /* UtilsTests.swift */; };
 		B6CBE3A41D480C220029A977 /* PerfectSize.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6CBE39D1D480B540029A977 /* PerfectSize.framework */; };
 		B6CBE3AB1D4811400029A977 /* BigStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CBE3A71D480FCA0029A977 /* BigStruct.swift */; };
 		B6EA98031D4A379C00FA5BD2 /* Willow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6EA98021D4A379C00FA5BD2 /* Willow.framework */; };
@@ -143,6 +146,9 @@
 		B6236B7B1D4945D600C468DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B6236B7D1D4945D600C468DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B6236B811D494A1A00C468DD /* shaders.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = shaders.metal; sourceTree = "<group>"; };
+		B693139F1DAE5FE8009C9AB2 /* PrimitivesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrimitivesTests.swift; sourceTree = "<group>"; };
+		B69313A11DAE6611009C9AB2 /* PolicyTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PolicyTests.swift; sourceTree = "<group>"; };
+		B69313A31DAE7217009C9AB2 /* UtilsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilsTests.swift; sourceTree = "<group>"; };
 		B6CBE39D1D480B540029A977 /* PerfectSize.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PerfectSize.framework; path = Carthage/Build/Mac/PerfectSize.framework; sourceTree = "<group>"; };
 		B6CBE39F1D480BD40029A977 /* PerfectSize.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PerfectSize.framework; path = Carthage/Build/iOS/PerfectSize.framework; sourceTree = "<group>"; };
 		B6CBE3A11D480BDB0029A977 /* PerfectSize.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PerfectSize.framework; path = Carthage/Build/tvOS/PerfectSize.framework; sourceTree = "<group>"; };
@@ -275,6 +281,9 @@
 			isa = PBXGroup;
 			children = (
 				0B29EFBC1CEF2361006DD052 /* UniformTests.swift */,
+				B693139F1DAE5FE8009C9AB2 /* PrimitivesTests.swift */,
+				B69313A31DAE7217009C9AB2 /* UtilsTests.swift */,
+				B69313A11DAE6611009C9AB2 /* PolicyTests.swift */,
 				0BB204D41CF31D77001909AA /* GlobalUniformTests.swift */,
 				0B2E982C1CFD84FB00A633A0 /* UniformArrayTests.swift */,
 				B6CBE3A71D480FCA0029A977 /* BigStruct.swift */,
@@ -676,6 +685,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B69313A41DAE7217009C9AB2 /* UtilsTests.swift in Sources */,
+				B69313A01DAE5FE8009C9AB2 /* PrimitivesTests.swift in Sources */,
+				B69313A21DAE6611009C9AB2 /* PolicyTests.swift in Sources */,
 				0B2E982D1CFD84FB00A633A0 /* UniformArrayTests.swift in Sources */,
 				B6CBE3AB1D4811400029A977 /* BigStruct.swift in Sources */,
 				0B29EFBD1CEF2361006DD052 /* UniformTests.swift in Sources */,

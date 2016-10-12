@@ -42,7 +42,8 @@ public struct Policy {
 	
 	/// Returns the amount of bytes needed according to this policy
 	func bytesNeeded(oldBytes old: Int, newBytes: Int) -> Int {
-		return max(decrease ? 0 : old, rounding.bytesNeeded(newBytes))
+		let unrounded = max(decrease ? 0 : old, newBytes)
+		return rounding.bytesNeeded(unrounded)
 	}
 }
 

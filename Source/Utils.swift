@@ -11,6 +11,13 @@ import Willow
 
 let log = Logger(configuration: LoggerConfiguration.timestampConfiguration())
 
+extension Int {
+	var isPowerOfTwo : Bool {
+		if self < 1 { return false }
+		return self & (self - 1) == 0
+	}
+}
+
 func roundUpToPowerOf2(_ n: Int) -> Int {
 	var n = n - 1
 	var shift = 1

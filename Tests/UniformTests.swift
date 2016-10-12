@@ -103,8 +103,6 @@ class UniformTests: XCTestCase {
 		XCTAssert(buffer.length >= MemoryLayout<Int>.size)
 	}
 	
-	
-	
 	func testDealloc() {
 		uniform = nil
 	}

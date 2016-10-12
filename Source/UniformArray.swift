@@ -9,13 +9,13 @@
 import Metal
 
 
-private let resourceOptions : MTLResourceOptions = MTLResourceOptions()
+private let resourceOptions : MTLResourceOptions = []
 private let defaultAllocationPolicy = Policy(rounding: .powerOfTwo, decrease: true)
 
 final public class UniformArray<T> : MetalMemory {
 	var memory : PageMemory
 	
-	fileprivate let policy : Policy
+	private let policy : Policy
 	
 	public var device : MTLDevice? {
 		didSet {
@@ -23,8 +23,15 @@ final public class UniformArray<T> : MetalMemory {
 		}
 	}
 	
-	fileprivate func update(_ pointer: UnsafeMutableRawPointer, bytes: Int) {
-		_metalBuffer = device?.makeBuffer(bytesNoCopy: pointer, length: bytes, options: resourceOptions, deallocator: nil)
+	private func update(_ pointer: UnsafeMutableRawPointer, bytes: Int) {
+		// Can't create buffer with 0 bytes
+		guard bytes > 0 else { return }
+		
+		_metalBuffer = device?.makeBuffer(
+			bytesNoCopy: pointer,
+			length: bytes,
+			options: resourceOptions,
+			deallocator: nil)
 		_metalBuffer?.label = label
 	}
 	
@@ -56,18 +63,19 @@ final public class UniformArray<T> : MetalMemory {
 	
 	public var count : Int {
 		didSet {
-			memory.bytes = UniformArray.getBytesNeeded(count)
+			memory.bytes = UniformArray.getBytesNeeded(count: count)
 		}
 	}
 	
-	static func getBytesNeeded(_ count: Int) -> Int {
-		return Swift.max(1, count) * MemoryLayout<T>.stride
+	static func getBytesNeeded(count: Int) -> Int {
+		return count * MemoryLayout<T>.stride
 	}
 	
 	public init(count: Int, policy: Policy = defaultAllocationPolicy) {
 		self.policy = policy
 		self.count = count
-		memory = PageMemory(bytes: UniformArray.getBytesNeeded(count), policy: policy)
+		
+		memory = PageMemory(bytes: UniformArray.getBytesNeeded(count: count), policy: policy)
 		memory.movedCallbacks.append(update)
 	}
 	
@@ -108,7 +116,7 @@ extension UniformArray : RangeReplaceableCollection {
 		memory.bytes = Swift.max(memory.bytes, n * MemoryLayout<T>.stride)
 	}
 	
-	fileprivate var free : Int {
+	private var free : Int {
 		return (memory.bytes - count * MemoryLayout<T>.stride) / MemoryLayout<T>.stride
 	}
 	
