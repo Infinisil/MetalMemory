@@ -17,7 +17,7 @@ class UtilsTests: XCTestCase {
 		let powers : Set<Int> = Set(exp.map{ 1 << $0 })
 		
 		for s in powers {
-			XCTAssert((1 << s).isPowerOfTwo)
+			XCTAssert(s.isPowerOfTwo)
 		}
 		
 		for i in 0..<(1 << exp.upperBound) where !powers.contains(i) {
