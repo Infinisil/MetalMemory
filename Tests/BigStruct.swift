@@ -9,7 +9,7 @@
 
 import PerfectSize
 
-typealias Page = B.I.O.O.O.O.O.O.O.O.O.O.O.O
+typealias Page /* 4096 bytes, not equal to a page on every platform */ = B.I.O.O.O.O.O.O.O.O.O.O.O.O
 typealias PagePlus1 = Page.Add1
 
 typealias PageTimes8 = Page.O.O.O
