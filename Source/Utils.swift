@@ -16,16 +16,16 @@ extension Int {
 		if self < 1 { return false }
 		return self & (self - 1) == 0
 	}
-}
-
-func roundUpToPowerOf2(_ n: Int) -> Int {
-	var n = n - 1
-	var shift = 1
-	while (n+1) & n != 0 {
-		n |= n >> shift
-		shift <<= 1
+	
+	func nextPowerOf2() -> Int {
+		var n = self - 1
+		var shift = 1
+		while (n+1) & n != 0 {
+			n |= n >> shift
+			shift <<= 1
+		}
+		return n + 1
 	}
-	return n + 1
 }
 
 // Fatal error mocking, to be able to test an expected fatal

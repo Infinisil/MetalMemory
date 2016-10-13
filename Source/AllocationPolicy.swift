@@ -24,7 +24,7 @@ public struct Policy {
 			let pageBytes = NSRoundUpToMultipleOfPageSize(minBytes)
 			switch self {
 			case .pageMultiple: return pageBytes
-			case .powerOfTwo: return roundUpToPowerOf2(pageBytes)
+			case .powerOfTwo: return pageBytes.nextPowerOf2()
 			}
 		}
 	}

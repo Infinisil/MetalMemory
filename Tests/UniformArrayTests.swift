@@ -22,10 +22,7 @@ class UniformArrayTests: XCTestCase {
 	
 	func testInit() {
 		let a = UniformArray<Int>()
-		XCTAssert(a.memory.bytes == 0)
 		XCTAssert(a.device == nil)
-		
-		let b = UniformArray<Void>()
 		
 	}
 	
