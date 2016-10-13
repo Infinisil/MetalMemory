@@ -36,7 +36,7 @@ class DrawingView : MTKView {
 
 	override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
 		guard let touch = currentTouch , touches.contains(touch) else { return }
-		renderer?.appendToLastLine(touchPoint(forTouch: touch))
+		renderer?.appendToLastLine(point: touchPoint(forTouch: touch))
 	}
 	
 	override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {

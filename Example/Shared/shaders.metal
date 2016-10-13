@@ -9,9 +9,9 @@
 #include <metal_stdlib>
 using namespace metal;
 
-vertex float4 basicVertex(const device float2 *particles [[ buffer(0) ]],
+vertex float4 basicVertex(const device float2 *data [[ buffer(0) ]],
 						  uint i [[ vertex_id ]]) {
-	return float4(particles[i].x, particles[i].y, 0, 1);
+	return float4(data[i].x, data[i].y, 0, 1);
 }
 
 fragment float4 basicFragment() {

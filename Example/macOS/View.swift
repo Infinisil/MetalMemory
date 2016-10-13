@@ -31,6 +31,6 @@ class DrawingView : MTKView {
 	}
 	
 	override func mouseDragged(with theEvent: NSEvent) {
-		renderer?.appendToLastLine(normalizedPoint(forEvent: theEvent))
+		renderer?.appendToLastLine(point: normalizedPoint(forEvent: theEvent))
 	}
 }

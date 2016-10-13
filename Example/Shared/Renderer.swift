@@ -46,7 +46,7 @@ class Renderer : NSObject, MTKViewDelegate {
 		lines.append((points.count, 0))
 	}
 	
-	func appendToLastLine(_ point: float2) {
+	func appendToLastLine(point point: float2) {
 		guard !lines.isEmpty else { return }
 		points.append(point)
 		lines[lines.endIndex - 1].count += 1
