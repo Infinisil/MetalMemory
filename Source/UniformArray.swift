@@ -65,6 +65,7 @@ final public class UniformArray<T> : MetalMemory {
 	}
 	
 	static func getBytesNeeded(count: Int) -> Int {
+		// Allocate space for at least one element, because a buffer with 0 bytes can't be allocated
 		return Swift.max(1, count) * MemoryLayout<T>.stride
 	}
 	
@@ -73,6 +74,8 @@ final public class UniformArray<T> : MetalMemory {
 		self.count = count
 		
 		memory = PageMemory(bytes: UniformArray.getBytesNeeded(count: count), policy: policy)
+		
+		// When the memory moved due to an de/increase of size, update the metal buffer with the new memory
 		memory.movedCallbacks.append(update)
 	}
 	

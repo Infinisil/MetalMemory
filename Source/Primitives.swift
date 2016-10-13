@@ -33,8 +33,11 @@ final class PageMemory {
 	typealias MovedCallback = (_ pointer: UnsafeMutableRawPointer, _ bytes: Int) -> Void
 	
 	var policy : Policy
+	
+	/// Callbacks to invoke when the memory has moved
 	var movedCallbacks : [MovedCallback] = []
 	
+	// The underlying memory. This property changes everytime the memory gets de/increased.
 	var mem : ConstPageMemory {
 		didSet {
 			NSCopyMemoryPages(oldValue.pointer, mem.pointer, min(oldValue.bytes, mem.bytes))
@@ -44,6 +47,7 @@ final class PageMemory {
 		}
 	}
 	
+	/// The minimum amout of bytes that should be allocated, the actual amount is calculated using the policy
 	var bytes : Int {
 		didSet {
 			let actual = policy.bytesNeeded(oldBytes: oldValue, newBytes: bytes)
