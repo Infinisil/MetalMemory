@@ -24,9 +24,6 @@ final public class UniformArray<T> : MetalMemory {
 	}
 	
 	private func update(_ pointer: UnsafeMutableRawPointer, bytes: Int) {
-		// Can't create buffer with 0 bytes
-		guard bytes > 0 else { return }
-		
 		_metalBuffer = device?.makeBuffer(
 			bytesNoCopy: pointer,
 			length: bytes,
@@ -68,7 +65,7 @@ final public class UniformArray<T> : MetalMemory {
 	}
 	
 	static func getBytesNeeded(count: Int) -> Int {
-		return count * MemoryLayout<T>.stride
+		return Swift.max(1, count) * MemoryLayout<T>.stride
 	}
 	
 	public init(count: Int, policy: Policy = defaultAllocationPolicy) {
